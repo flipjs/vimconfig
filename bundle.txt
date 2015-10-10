@@ -4,3 +4,23 @@ call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
 
 List of vim plugins
 https://github.com/tpope/vim-sensible.git
+https://github.com/tpope/vim-unimpaired.git
+https://github.com/Lokaltog/vim-distinguished.git
+https://github.com/airblade/vim-gitgutter.git
+https://github.com/rking/ag.vim.git
+https://github.com/kien/ctrlp.vim.git
+https://github.com/scrooloose/nerdtree.git
+https://github.com/tpope/vim-commentary.git
+https://github.com/tpope/vim-surround.git
+https://github.com/tpope/vim-repeat.git
+https://github.com/Raimondi/delimitMate.git
+https://github.com/jelera/vim-javascript-syntax.git
+https://github.com/pangloss/vim-javascript.git
+https://github.com/othree/javascript-libraries-syntax.vim.git
+https://github.com/scrooloose/syntastic.git
+https://github.com/SirVer/ultisnips.git
+https://github.com/Valloric/YouCompleteMe.git
+  - git submodule update --init --recursive
+  - ./install.py
+https://github.com/marijnh/tern_for_vim.git
+  - npm install
