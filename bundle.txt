@@ -1,0 +1,6 @@
+Ensure you include the below in .vimrc
+  and put all plugins in ~/.vimfiles/vimbundle folder
+call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
+
+List of vim plugins
+https://github.com/tpope/vim-sensible.git
