@@ -1,5 +1,4 @@
-Ensure you include the below in .vimrc
-  and put all plugins in ~/.vimfiles/vimbundle folder
+Ensure you include the below in .vimrc and put all plugins in ~/.vimfiles/vimbundle
 call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
 
 List of vim plugins
@@ -15,8 +14,9 @@ https://github.com/tpope/vim-surround.git
 https://github.com/tpope/vim-repeat.git
 https://github.com/Raimondi/delimitMate.git
 https://github.com/jelera/vim-javascript-syntax.git
-https://github.com/pangloss/vim-javascript.git
 https://github.com/othree/javascript-libraries-syntax.vim.git
+https://github.com/pangloss/vim-javascript.git
+https://github.com/crusoexia/vim-javascript-lib.git
 https://github.com/scrooloose/syntastic.git
 https://github.com/SirVer/ultisnips.git
 https://github.com/Valloric/YouCompleteMe.git
@@ -24,3 +24,15 @@ https://github.com/Valloric/YouCompleteMe.git
   - ./install.py
 https://github.com/marijnh/tern_for_vim.git
   - npm install
+https://github.com/editorconfig/editorconfig-vim.git
+https://github.com/luochen1990/rainbow.git
+https://github.com/sjl/gundo.vim.git
+https://github.com/rizzatti/dash.vim.git
+https://github.com/Chiel92/vim-autoformat.git
+https://github.com/mattn/emmet-vim.git
+https://github.com/elixir-lang/vim-elixir.git
+https://github.com/wavded/vim-stylus.git
+https://github.com/kchmck/vim-coffee-script.git
+https://github.com/junegunn/vim-easy-align.git
+https://github.com/crusoexia/vim-monokai.git
+https://github.com/elzr/vim-json.git
