@@ -1,4 +1,11 @@
-""" Pathogen's Configuration - must be on top """
+" *********************************************************************
+" Description - Vim Custom Configuration
+" Author - Felipe Apostol
+" Date - 11 Oct 2015
+" *********************************************************************
+
+
+" ------------ Pathogen's Configuration - must be on top ------------ "
 
 filetype off
 filetype plugin indent off
@@ -10,13 +17,16 @@ filetype plugin indent on
 syntax on
 
 
-""" Personal Configuration """
+" --------------------- Custom Configuration ---------------------- "
 
 " vim color theme
 set t_Co=256
 set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
-syntax on
 colorscheme monokai
+
+" override colorscheme monokai background color
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 set nocompatible
 set encoding=utf-8
@@ -58,15 +68,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" enable folding
-" set foldenable
-" open most folds by default
-" set foldlevelstart=10
-" 10 nested fold max
-" set foldnestmax=10
-" fold based on indent level
-" set foldmethod=indent
-
 " set tab and eol characters
 set listchars=tab:▸\ ,eol:¬
 " invisible character colors
@@ -75,6 +76,15 @@ highlight SpecialKey guifg=#4a4a59
 " change cursor shape in different modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" folds
+set viewdir=~/.vimfiles/vimviews
+" javascript folds defined in ftplugin
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+
+" ------------------------ Custom Mapping ------------------------- "
 
 " mapleader is either comma or space
 let mapleader = ","
@@ -90,13 +100,14 @@ nnoremap <leader>dd :bd<cr>
 nnoremap <leader>ww :w<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
-" home/end
+" remap % ^ $
+nnoremap Q %
 nnoremap H ^
 nnoremap L $
 vnoremap L g_
-" $/^ doesn't do anything
-nnoremap $ <nop>
+" remove original mapping for ^ and $
 nnoremap ^ <nop>
+nnoremap $ <nop>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -104,8 +115,6 @@ nnoremap k gk
 inoremap jj <esc>
 " highlight last inserted text
 nnoremap gV `[v`]
-" create new splits with Qs or Qv, or Qq to close split
-nnoremap Q <c-w>
 " select all text
 nnoremap <leader>aa ggVG
 " relativenumber toggle
@@ -115,28 +124,23 @@ nnoremap <leader>rn :set relativenumber!<cr>
 nnoremap <leader>99 :match ErrorMsg '\%>99v.\+'<cr>
 nnoremap <leader>00 :match none<cr>
 " switch filetype
-nnoremap <leader>fth :set ft=html<cr>
+nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
+nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
 
 
-""" Autocmd / Autogroup """
+" ------------------------ Function Mapping ------------------------- "
 
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
-
-augroup JavaScript
-  autocmd!
-  autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
-  autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
-  autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  " Work around to indent and tab when pressing return after the open brace
-  autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
-  autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
-  autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
-augroup END
+" file heading
+nnoremap <leader>hf mz:execute FileHeader()`zjA
+" line heading
+nnoremap <leader>hl :call LineHeader(67, '
+" delete empty buffers
+nnoremap <leader>ee :call DeleteEmptyBuffers()<CR>
 
 
-""" Plugin-dependent Mapping """
+" -------------------- Plugin-dependent Mapping --------------------- "
 
 " Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
@@ -151,9 +155,9 @@ nnoremap <leader>bb :CtrlPBuffer<cr>
 nnoremap <leader>bn :bn<cr> """ switch between last 2 buffers being edited
 
 " Gundo
-nnoremap <leader>hu :GundoToggle<cr>
-nnoremap <leader>he :earlier 1f<cr>
-nnoremap <leader>hl :later 1f<cr>
+nnoremap <leader>uu :GundoToggle<cr>
+nnoremap <leader>ue :earlier 1f<cr>
+nnoremap <leader>ul :later 1f<cr>
 
 " Autoformat
 noremap <c-g> :Autoformat<cr>
@@ -169,7 +173,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-""" Plugin Settings """
+" ------------------------- Plugin Settings ------------------------- "
 
 " Ag.vim
 set runtimepath^=~/.vimfiles/vimbundle/ag
@@ -206,7 +210,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vimfiles/vimsnippets']
 autocmd CompleteDone * pclose
 
 " Rainbow
-autocmd FileType javascript syntax clear jsFuncBlock " hack to work with js
 let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -233,7 +236,8 @@ let g:rainbow_conf = {
     \       'css': 0,
     \   }
     \}
-
+" hack to work rainbow with javascript files
+autocmd FileType javascript syntax clear jsFuncBlock
 
 " Gundo
 set undodir=~/.vimfiles/vimundo
@@ -243,4 +247,79 @@ set undolevels=1000
 let g:gundo_width = 30
 
 
-""" END """
+" ---------------------------- Functions ---------------------------- "
+
+function FileHeader()
+let s:line=line(".")
+call setline(s:line,  "/***********************************************************************")
+call append(s:line,   " * Description - ")
+call append(s:line+1, " * Author - Felipe Apostol")
+call append(s:line+2, " * Date - ".strftime("%d %b %Y"))
+call append(s:line+3, " ***********************************************************************/")
+unlet s:line
+endfunction
+
+function LineHeader(width, word)
+    let a:inserted_word = ' ' . a:word . ' '
+    let a:word_width = strlen(a:inserted_word)
+    let a:length_before = (a:width - a:word_width) / 2
+    let a:hashes_before = repeat('-', a:length_before)
+    let a:hashes_after = repeat('-', a:width - (a:word_width + a:length_before))
+    let a:hash_line = repeat('-', a:width)
+    let a:word_line = a:hashes_before . a:inserted_word . a:hashes_after . ' //'
+
+    " :put =a:hash_line
+    :put =a:word_line
+    " :put =a:hash_line
+endfunction
+
+function! DeleteEmptyBuffers()
+    let [i, n; empty] = [1, bufnr('$')]
+    while i <= n
+        if bufexists(i) && bufname(i) == ''
+            call add(empty, i)
+        endif
+        let i += 1
+    endwhile
+    if len(empty) > 0
+        exe 'bdelete' join(empty)
+    endif
+endfunction
+
+
+" ----------------------- Autocmd / Autogroup ----------------------- "
+
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+augroup JavaScript
+  autocmd!
+  autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
+  autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
+  autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
+  " Work around to indent and tab when pressing return after the open brace
+  autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
+  autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
+  autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
+augroup END
+
+augroup Elixir
+  autocmd!
+  autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
+  autocmd FileType elixir nnoremap <buffer> <leader>mm :!clear && mix test<cr>
+augroup END
+
+
+" -------------------- Spelling Auto-correction --------------------- "
+
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev wrap set wrap
+cnoreabbrev warp set wrap
+cnoreabbrev nowrap set nowrap
+cnoreabbrev nowr set nowrap
+inoreabbrev funciton function
+
+
+" ------------------------------- END ------------------------------- "
