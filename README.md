@@ -1,3 +1,3 @@
 # flipjs.io Vim Configuration
 
-- Note: Vim plugins are stored outside this folder/repo.
+See pathogen info on how to load vim plugins outside .vim directory
