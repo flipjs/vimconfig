@@ -59,7 +59,7 @@ set wrap
 set linebreak
 set breakindent
 set showbreak=»\
-set textwidth=99
+set textwidth=96
 set formatoptions=qrn1
 
 set mouse=a
@@ -120,10 +120,10 @@ nnoremap gV `[v`]
 nnoremap <leader>aa ggVG
 " relativenumber toggle
 nnoremap <leader>rn :set relativenumber!<cr>
-" visual warning when text past 99 column
-" match ErrorMsg '\%>99v.\+'
-nnoremap <leader>99 :match ErrorMsg '\%>99v.\+'<cr>
-nnoremap <leader>00 :match none<cr>
+" visual warning when text past 96 column
+" match ErrorMsg '\%>96v.\+'
+nnoremap <leader>ll :match ErrorMsg '\%>96v.\+'<cr>
+nnoremap <leader>ln :match none<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
