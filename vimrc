@@ -30,8 +30,8 @@ highlight Normal guibg=black guifg=white
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
+set noeb vb t_vb=
 set encoding=utf-8
-set visualbell
 set nomodeline
 
 " note: editorconfig overrides this
