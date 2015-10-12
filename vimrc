@@ -20,6 +20,8 @@ syntax on
 
 " --------------------- Custom Configuration ---------------------- "
 
+" Ensure vim-sensible is installed, for set defaults
+
 " vim color theme
 set t_Co=256
 set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
@@ -40,14 +42,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab """ tab is space
 
-set autoindent
-set number
-set ruler
+set relativenumber
 set cursorline
-" syntax enable
-set showcmd
 set hidden
-set wildmenu
 set showmatch
 set lazyredraw
 
@@ -69,11 +66,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" set tab and eol characters
-set listchars=tab:▸\ ,eol:¬
-" invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
 " change cursor shape in different modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -118,8 +110,6 @@ inoremap jj <esc>
 nnoremap gV `[v`]
 " select all text
 nnoremap <leader>aa ggVG
-" relativenumber toggle
-nnoremap <leader>rn :set relativenumber!<cr>
 " visual warning when text past 96 column
 " match ErrorMsg '\%>96v.\+'
 nnoremap <leader>ll :match ErrorMsg '\%>96v.\+'<cr>
