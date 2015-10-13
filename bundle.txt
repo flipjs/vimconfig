@@ -39,5 +39,6 @@ https://github.com/crusoexia/vim-monokai.git
 https://github.com/elzr/vim-json.git
 https://github.com/itchyny/lightline.vim.git
 https://github.com/tpope/vim-fugitive.git
+https://github.com/christoomey/vim-tmux-navigator
 https://github.com/ryanss/vim-hackernews.git
 https://github.com/joshhartigan/vim-reddit.git
