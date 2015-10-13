@@ -115,6 +115,14 @@ nnoremap <leader>aa ggVG
 " match ErrorMsg '\%>96v.\+'
 nnoremap <leader>ll :match ErrorMsg '\%>96v.\+'<cr>
 nnoremap <leader>ln :match none<cr>
+" splits shortcuts
+nnoremap <leader>sv :vsplit<cr>
+nnoremap <leader>sb :split<cr>
+nnoremap <leader>sc <c-w>c
+nnoremap <leader>sa :qa<cr>
+nnoremap <leader>ss :vertical resize 120<cr>
+nnoremap <leader>se <c-w>=
+
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
@@ -158,7 +166,7 @@ nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
 " Autoformat
-noremap <c-g> :Autoformat<cr>
+noremap <c-t> :Autoformat<cr>
 
 " Emmet
 imap <c-e> <c-y>,
@@ -209,6 +217,14 @@ autocmd CompleteDone * pclose
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" Tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
 " Lightline
 set noshowmode
