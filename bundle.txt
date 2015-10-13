@@ -18,12 +18,13 @@ https://github.com/othree/javascript-libraries-syntax.vim.git
 https://github.com/pangloss/vim-javascript.git
 https://github.com/crusoexia/vim-javascript-lib.git
 https://github.com/scrooloose/syntastic.git
-https://github.com/SirVer/ultisnips.git
+https://github.com/marijnh/tern_for_vim.git
+  - npm install
 https://github.com/Valloric/YouCompleteMe.git
   - git submodule update --init --recursive
   - ./install.py
-https://github.com/marijnh/tern_for_vim.git
-  - npm install
+https://github.com/SirVer/ultisnips.git
+https://github.com/ervandew/supertab.git
 https://github.com/editorconfig/editorconfig-vim.git
 https://github.com/luochen1990/rainbow.git
 https://github.com/sjl/gundo.vim.git
