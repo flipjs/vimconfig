@@ -119,7 +119,7 @@ nnoremap <leader>ln :match none<cr>
 nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
 nnoremap <leader>sc <c-w>c
-nnoremap <leader>sa :qa<cr>
+nnoremap <leader>sq :qa<cr>
 nnoremap <leader>ss :vertical resize 120<cr>
 nnoremap <leader>se <c-w>=
 
