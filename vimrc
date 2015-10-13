@@ -198,14 +198,17 @@ let g:syntastic_html_tidy_ignore_errors=["proprietary attribute" ,"trimming empt
 set complete=.,b,u,]
 set wildmode=longest,list,full
 set completeopt=menu,preview
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+let g:SuperTabDefaultcompletionType = '<c-n>'
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vimfiles/vimsnippets']
 autocmd CompleteDone * pclose
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Lightline
 set noshowmode
