@@ -32,6 +32,7 @@ highlight Normal guibg=black guifg=white
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
+" no error bell, no visual bell
 set noeb vb t_vb=
 set encoding=utf-8
 set nomodeline
@@ -132,6 +133,12 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<CR>
 
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+" Gitgutter
+" tell gitgutter to allow overriding gutter color
+let g:gitgutter_override_sign_column_highlight = 0
+" override gutter color
+highlight SignColumn ctermfg=118
 
 " Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
