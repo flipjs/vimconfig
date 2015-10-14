@@ -43,6 +43,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab """ tab is space
 
+set number
 set relativenumber
 set cursorline
 set hidden
@@ -59,6 +60,7 @@ set breakindent
 set showbreak=»\
 set textwidth=96
 set formatoptions=qrn1
+set nolist
 
 set splitbelow
 set splitright
