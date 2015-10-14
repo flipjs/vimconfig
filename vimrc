@@ -169,6 +169,15 @@ highlight SignColumn ctermfg=118
 " Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
+" Unite
+" add unite mapping here
+
+" Vimfiler
+nnoremap <leader>fe :VimFiler<cr>
+
+" Vimshell
+" add vimshell mapping here
+
 " CtrlP
 nnoremap <leader>ff :CtrlP<cr>
 nnoremap <leader>fb :CtrlPBuffer<cr>
@@ -182,6 +191,9 @@ nnoremap <leader>bn :bn<cr> """ switch between last 2 buffers being edited
 nnoremap <leader>uu :GundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
+
+" Tagbar
+nnoremap <leader>tb :TagbarToggle<cr>
 
 " Autoformat
 noremap <c-t> :Autoformat<cr>
@@ -209,6 +221,9 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_match_window = 'min:4,max:28' "results imposed by max height
 let g:ctrlp_match_window_reversed = 0
+
+" Vimfiler
+let g:vimfiler_as_default_explorer = 1
 
 " Syntastic
 let g:syntastic_check_on_open=1
