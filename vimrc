@@ -48,6 +48,7 @@ set relativenumber
 set cursorline
 set hidden
 set showmatch
+set showmode
 set lazyredraw
 
 set ignorecase
@@ -268,7 +269,6 @@ nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-g> :TmuxNavigatePrevious<cr>
 
 " Lightline
-set noshowmode
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ], ['ctrlpmark'] ],
