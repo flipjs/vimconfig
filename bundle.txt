@@ -41,3 +41,8 @@ https://github.com/itchyny/lightline.vim.git
 https://github.com/christoomey/vim-tmux-navigator
 https://github.com/ryanss/vim-hackernews.git
 https://github.com/joshhartigan/vim-reddit.git
+https://github.com/Shougo/unite.vim.git
+https://github.com/Shougo/vimfiler.vim.git
+https://github.com/Shougo/vimproc.vim.git
+https://github.com/Shougo/vimshell.vim.git
+https://github.com/majutsushi/tagbar.git
