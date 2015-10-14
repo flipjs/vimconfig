@@ -141,6 +141,9 @@ nnoremap { {zz
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" search word under cursor project-wide
+nmap <c-q> :Ag <c-r>=expand("<cword>")<cr><cr>
+
 
 " ------------------------ Function Mapping ------------------------- "
 
