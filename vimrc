@@ -122,7 +122,6 @@ nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq :qa<cr>
 nnoremap <leader>ss :vertical resize 120<cr>
 nnoremap <leader>se <c-w>=
-
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
@@ -375,7 +374,7 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  " Work around to indent and tab when pressing return after the open brace
+  " Insert line in between brackets when pressing <enter>
   autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
   autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
   autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
