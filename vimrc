@@ -83,9 +83,10 @@ autocmd BufWinEnter *.* silent loadview
 
 " ------------------------ Custom Mapping ------------------------- "
 
-" mapleader is either comma or space
+" mapleader is comma
 let mapleader = ","
-nmap <space> ,
+" get comma functionality back using ,,
+nnoremap ,, ,
 
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
