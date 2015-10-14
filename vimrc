@@ -121,8 +121,10 @@ nnoremap gV `[v`]
 nnoremap <leader>aa ggVG
 " visual warning when text past 96 column
 " match ErrorMsg '\%>96v.\+'
-nnoremap <leader>ll :match ErrorMsg '\%>96v.\+'<cr>
+nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
 nnoremap <leader>ln :match none<cr>
+" syntactic error window
+nnoremap <leader>ll :Errors<cr>
 " splits shortcuts
 nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
