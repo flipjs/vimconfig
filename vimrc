@@ -189,13 +189,13 @@ nnoremap <leader>fc :CtrlPCurWD<cr>
 nnoremap <leader>bb :CtrlPBuffer<cr>
 nnoremap <leader>bn :bn<cr> """ switch between last 2 buffers being edited
 
+" Tagbar
+nnoremap <leader>bt :TagbarToggle<cr>
+
 " Gundo
 nnoremap <leader>uu :GundoToggle<cr>
 nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
-
-" Tagbar
-nnoremap <leader>tb :TagbarToggle<cr>
 
 " Autoformat
 noremap <c-t> :Autoformat<cr>
@@ -215,6 +215,11 @@ nmap ga <Plug>(EasyAlign)
 
 " Ag.vim
 set runtimepath^=~/.vimfiles/vimbundle/ag
+
+" Tern
+let g:tern_map_prefix = '<leader>'
+" keyboard shortcuts
+let g:tern_map_keys = 1
 
 " CtrlP
 let g:ctrlp_map = '<c-\>'
