@@ -60,6 +60,9 @@ set showbreak=»\
 set textwidth=96
 set formatoptions=qrn1
 
+set splitbelow
+set splitright
+
 set mouse=a
 set clipboard=unnamed
 
@@ -102,6 +105,8 @@ vnoremap L g_
 " remove original mapping for ^ and $
 nnoremap ^ <nop>
 nnoremap $ <nop>
+" remap Y to yank from cursor to end of line
+nnoremap Y y$
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -127,7 +132,15 @@ nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
-
+" center screen when doing n, N, { and }
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap } }zz
+nnoremap { {zz
+" make copy/paste behaves similar to other text editors
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 
 " ------------------------ Function Mapping ------------------------- "
 
