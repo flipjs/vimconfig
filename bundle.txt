@@ -4,7 +4,7 @@ call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
 List of vim plugins
 https://github.com/tpope/vim-sensible.git
 https://github.com/tpope/vim-unimpaired.git
-https://github.com/Lokaltog/vim-distinguished.git
+https://github.com/tpope/vim-fugitive.git
 https://github.com/airblade/vim-gitgutter.git
 https://github.com/rking/ag.vim.git
 https://github.com/kien/ctrlp.vim.git
@@ -38,7 +38,6 @@ https://github.com/junegunn/vim-easy-align.git
 https://github.com/crusoexia/vim-monokai.git
 https://github.com/elzr/vim-json.git
 https://github.com/itchyny/lightline.vim.git
-https://github.com/tpope/vim-fugitive.git
 https://github.com/christoomey/vim-tmux-navigator
 https://github.com/ryanss/vim-hackernews.git
 https://github.com/joshhartigan/vim-reddit.git
