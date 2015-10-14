@@ -374,7 +374,7 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  " Insert line in between brackets when pressing <enter>
+  " Insert line between brackets when pressing <enter> just after open bracket
   autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
   autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
   autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
@@ -398,6 +398,14 @@ cnoreabbrev warp set wrap
 cnoreabbrev nowrap set nowrap
 cnoreabbrev nowr set nowrap
 inoreabbrev funciton function
+
+
+" ------------------------------ Notes ------------------------------ "
+
+" find and replace
+" http://jezenthomas.com/how-i-find-and-replace-in-vim/
+" :args `ack -l '\bClass\b' --ignore-dir=compiled`
+" :argdo %s/\<Class\>/MooTools.Class/gc | update
 
 
 " ------------------------------- END ------------------------------- "
