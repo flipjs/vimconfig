@@ -222,6 +222,10 @@ nmap ga <Plug>(EasyAlign)
 
 " ------------------------- Plugin Settings ------------------------- "
 
+" Operator-highlight (flipjs forked version)
+let g:ophigh_color = 196
+let g:ophigh_color_gui = "#FF0000"
+
 " Ag.vim
 set runtimepath^=~/.vimfiles/vimbundle/ag
 
@@ -409,7 +413,7 @@ let g:vimshell_force_overwrite_statusline = 0
 let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \   'ctermfgs': [26, 130, 78, 124],
+    \   'ctermfgs': [208, 186, 81, 148],
     \   'operators': '_,_',
     \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
     \   'separately': {
