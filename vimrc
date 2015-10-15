@@ -1,7 +1,8 @@
 " *********************************************************************
-" Description - Vim Custom Configuration
-" Author - Felipe Apostol
-" Date - 11 Oct 2015
+" Description: Vim Custom Configuration
+" Version: 3.0
+" Author: Felipe Apostol <flipjs.io@gmail.com>
+" Date: 11 October 2015
 " *********************************************************************
 
 
@@ -37,7 +38,7 @@ set noeb vb t_vb=
 set encoding=utf-8
 set nomodeline
 
-" note: editorconfig overrides this
+" may be overridden in .editorconfig
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -521,8 +522,16 @@ inoreabbrev funciton function
 
 " find and replace
 " http://jezenthomas.com/how-i-find-and-replace-in-vim/
+
 " :args `ack -l '\bClass\b' --ignore-dir=compiled`
 " :argdo %s/\<Class\>/MooTools.Class/gc | update
+
+" vim tips
+" http://zzapper.co.uk/vimtips.html
+
+" :%s/\r//g                   : Delete DOS returns ^M
+" Is your Text File jumbled onto one line? use following
+" :%s/\r/\r/g                 : Turn DOS returns ^M into real returns
 
 
 " ------------------------------- END ------------------------------- "
