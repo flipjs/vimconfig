@@ -91,6 +91,9 @@ let mapleader = ","
 " get comma functionality back using ,,
 nnoremap ,, ,
 
+" edit and source .vimrc
+nnoremap <leader>ve :edit $MYVIMRC<CR>
+nnoremap <leader>vs :source $MYVIMRC<CR>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
@@ -437,7 +440,7 @@ let g:gundo_width = 30
 
 " ---------------------------- Functions ---------------------------- "
 
-function FileHeader()
+function! FileHeader()
 let s:line=line(".")
 call setline(s:line,  "/***********************************************************************")
 call append(s:line,   " * Description - ")
@@ -447,7 +450,7 @@ call append(s:line+3, " ********************************************************
 unlet s:line
 endfunction
 
-function LineHeader(width, word)
+function! LineHeader(width, word)
     let a:inserted_word = ' ' . a:word . ' '
     let a:word_width = strlen(a:inserted_word)
     let a:length_before = (a:width - a:word_width) / 2
