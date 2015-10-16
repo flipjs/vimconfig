@@ -199,7 +199,7 @@ nnoremap <leader>bb :CtrlPBuffer<cr>
 nnoremap <leader>bn :bn<cr> """ switch between last 2 buffers being edited
 
 " Tagbar
-nnoremap <leader>bt :TagbarToggle<cr>
+nnoremap <leader>tb :TagbarToggle<cr>
 
 " Gundo
 nnoremap <leader>uu :GundoToggle<cr>
@@ -228,11 +228,6 @@ let g:ophigh_color_gui = "#FF0000"
 
 " Ag.vim
 set runtimepath^=~/.vimfiles/vimbundle/ag
-
-" Tern
-let g:tern_map_prefix = '<leader>'
-" keyboard shortcuts
-let g:tern_map_keys = 1
 
 " CtrlP
 let g:ctrlp_map = '<c-\>'
@@ -524,18 +519,26 @@ inoreabbrev funciton function
 
 " ------------------------------ Notes ------------------------------ "
 
-" find and replace
-" http://jezenthomas.com/how-i-find-and-replace-in-vim/
-
-" :args `ack -l '\bClass\b' --ignore-dir=compiled`
-" :argdo %s/\<Class\>/MooTools.Class/gc | update
-
 " vim tips
 " http://zzapper.co.uk/vimtips.html
 
 " :%s/\r//g                   : Delete DOS returns ^M
 " Is your Text File jumbled onto one line? use following
 " :%s/\r/\r/g                 : Turn DOS returns ^M into real returns
+
+" find and replace
+" http://jezenthomas.com/how-i-find-and-replace-in-vim/
+
+" :args `ack -l '\bClass\b' --ignore-dir=compiled`
+" :argdo %s/\<Class\>/MooTools.Class/gc | update
+
+" profiling vim performance
+" :profile start profile.log
+" :profile func *
+" :profile file *
+" " At this point do slow actions
+" :profile pause
+" :noautocmd qall!
 
 
 " ------------------------------- END ------------------------------- "
