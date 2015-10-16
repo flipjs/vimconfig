@@ -48,3 +48,4 @@ https://github.com/Shougo/vimshell.vim.git
 https://github.com/majutsushi/tagbar.git
 https://github.com/tommcdo/vim-exchange.git
 https://github.com/flipjs/vim-operator-highlight.git
+https://github.com/tpope/vim-abolish.git
