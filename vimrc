@@ -151,10 +151,6 @@ nnoremap { {zz
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
-" transpose 2 lines
-nnoremap <silent> <Plug>TransposeLines ddp
-\:call repeat#set("\<Plug>TransposeLines")<cr>
-nmap cp <Plug>TransposeLines
 " search word under cursor project-wide
 nmap <c-q> :Ag <c-r>=expand("<cword>")<cr><cr>
 
@@ -539,6 +535,11 @@ inoreabbrev funciton function
 " " At this point do slow actions
 " :profile pause
 " :noautocmd qall!
+
+" sample code how to use repeatable mapping
+" nnoremap <silent> <Plug>TransposeLines ddp
+" \:call repeat#set("\<Plug>TransposeLines")<cr>
+" nmap cp <Plug>TransposeLines
 
 
 " ------------------------------- END ------------------------------- "
