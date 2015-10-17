@@ -500,17 +500,66 @@ augroup Elixir
 augroup END
 
 
-" -------------------- Spelling Auto-correction --------------------- "
+" -------------------------- Abbreviations -------------------------- "
 
+cnoreabbrev Q q
+cnoreabbrev Qa qa
+cnoreabbrev QA qa
+cnoreabbrev W w
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev wrap set wrap
-cnoreabbrev warp set wrap
-cnoreabbrev nowrap set nowrap
-cnoreabbrev nowr set nowrap
 inoreabbrev funciton function
+inoreabbrev functon function
+" Angular
+inoreabbrev ngapp data-ng-app
+inoreabbrev ngbind data-ng-bind
+inoreabbrev ngbindhtml data-ng-bind-html
+inoreabbrev ngblur data-ng-blur
+inoreabbrev ngchange data-ng-change
+inoreabbrev ngchecked data-ng-checked
+inoreabbrev ngclass data-ng-class
+inoreabbrev ngclasseven data-ng-class-even
+inoreabbrev ngclassodd data-ng-class-odd
+inoreabbrev ngclick data-ng-click
+inoreabbrev ngcloak data-ng-cloak
+inoreabbrev ngcontroller data-ng-controller
+inoreabbrev ngdblclick data-ng-dblclick
+inoreabbrev ngdisabled data-ng-disabled
+inoreabbrev ngfocus data-ng-focus
+inoreabbrev ngform data-ng-form
+inoreabbrev nghide data-ng-hide
+inoreabbrev nghref data-ng-href
+inoreabbrev ngif data-ng-if
+inoreabbrev nginclude data-ng-include
+inoreabbrev nginit data-ng-init
+inoreabbrev ngkeydown data-ng-keydown
+inoreabbrev ngkeypress data-ng-keypress
+inoreabbrev ngkeyup data-ng-keyup
+inoreabbrev ngmessage data-ng-message
+inoreabbrev ngmessages data-ng-messages
+inoreabbrev ngmodel data-ng-model
+inoreabbrev ngmodeloptions data-ng-model-options
+inoreabbrev ngmousedown data-ng-mousedown
+inoreabbrev ngmouseenter data-ng-mouseenter
+inoreabbrev ngmouseleave data-ng-mouseleave
+inoreabbrev ngmousemove data-ng-mousemove
+inoreabbrev ngmouseover data-ng-mouseover
+inoreabbrev ngmouseup data-ng-mouseup
+inoreabbrev ngoptions data-ng-options
+inoreabbrev ngreadonly data-ng-readonly
+inoreabbrev ngrepeat data-ng-repeat
+inoreabbrev ngrepeatend data-ng-repeat-end
+inoreabbrev ngrepeatstart data-ng-repeat-start
+inoreabbrev ngrequired data-ng-required
+inoreabbrev ngselected data-ng-selected
+inoreabbrev ngshow data-ng-show
+inoreabbrev ngsrc data-ng-src
+inoreabbrev ngstyle data-ng-style
+inoreabbrev ngsubmit data-ng-submit
+inoreabbrev ngswitch data-ng-switch
+inoreabbrev ngtransclude data-ng-transclude
+inoreabbrev ngvalue data-ng-value
+inoreabbrev ngwhen data-ng-when
 
 
 " ------------------------------ Notes ------------------------------ "
