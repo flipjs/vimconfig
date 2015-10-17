@@ -82,7 +82,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " folds
 set viewdir=~/.vimfiles/vimviews
-" NOTE: javascript folds defined in ftplugin directory
+" Note: javascript folds defined in ftplugin directory
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
@@ -95,8 +95,8 @@ let mapleader = ","
 nnoremap ,, ,
 
 " edit and source .vimrc
-nnoremap <leader>ve :edit $MYVIMRC<CR>
-nnoremap <leader>vs :source $MYVIMRC<CR>
+nnoremap <leader>ve :edit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
@@ -153,6 +153,10 @@ nnoremap { {zz
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" Insert empty line between brackets on <enter>
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
 " search word under cursor project-wide
 nmap <c-q> :Ag <c-r>=expand("<cword>")<cr><cr>
 
@@ -164,7 +168,7 @@ nnoremap <leader>hf mz:execute FileHeader()`zjA
 " line heading
 nnoremap <leader>hl :call LineHeader(67, '
 " delete empty buffers
-nnoremap <leader>ee :call DeleteEmptyBuffers()<CR>
+nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 
 
 " -------------------- Plugin-dependent Mapping --------------------- "
@@ -394,6 +398,7 @@ augroup AutoSyntastic
   autocmd!
   autocmd BufWritePost *.js call s:syntastic()
 augroup END
+
 function! s:syntastic()
   SyntasticCheck
   call lightline#update()
@@ -481,25 +486,19 @@ function! DeleteEmptyBuffers()
 endfunction
 
 
-" ----------------------- Autocmd / Autogroup ----------------------- "
-
-autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+" -------------------------- Autocommands --------------------------- "
 
 augroup JavaScript
   autocmd!
+  autocmd BufRead,BufNewFile *.es6 setfiletype javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
-  autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  " Insert line between brackets when pressing <enter> just after open bracket
-  autocmd FileType javascript inoremap {<cr> {<cr>}<c-o>O
-  autocmd FileType javascript inoremap [<cr> [<cr>]<c-o>O
-  autocmd FileType javascript inoremap (<cr> (<cr>)<c-o>O
 augroup END
 
 augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
-  autocmd FileType elixir nnoremap <buffer> <leader>mm :!clear && mix test<cr>
+  autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
 augroup END
 
 
@@ -513,7 +512,7 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 inoreabbrev funciton function
 inoreabbrev functon function
-" NOTE: html abbreviations defined inside ftplugin directory
+" Note: some abbreviations are defined inside ftplugin directory
 
 
 " ------------------------------ Notes ------------------------------ "
