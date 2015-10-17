@@ -493,6 +493,7 @@ augroup JavaScript
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
+  autocmd FileType javascript inoremap iff if ()<c-o>i
 augroup END
 
 augroup Elixir
