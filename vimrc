@@ -260,7 +260,8 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
 " Ultisnips
-" put snippets inside ~/.vim/UltiSnips
+" put ultisnips snippets inside ~/.vim/UltiSnips
+" put snipmate snippets inside ~/.vim/snippets
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
