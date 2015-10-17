@@ -1,3 +1,4 @@
 # flipjs.io Vim Configuration
 
-See pathogen info on how to load vim plugins outside .vim directory
+Ensure vim plugins are installed to work with this configuration.
+See bundle.txt for list of required vim plugins.
