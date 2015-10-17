@@ -14,6 +14,7 @@ filetype off
 filetype plugin indent off
 
 execute pathogen#infect()
+" git clone vim-plugins inside ~/.vimfiles/vimbundle directory
 execute pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
 
 filetype plugin indent on
@@ -259,6 +260,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
 " Ultisnips
+" put snippets inside ~/.vim/UltiSnips
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
