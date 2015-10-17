@@ -496,6 +496,14 @@ augroup JavaScript
   autocmd FileType javascript inoremap iff if ()<c-o>i
 augroup END
 
+augroup CoffeeScript
+  autocmd!
+  autocmd FileType coffee nnoremap <buffer> <leader>rr :CoffeeRun<cr>
+  autocmd FileType coffee nnoremap <buffer> <leader>rl :!clear && coffeelint %<cr>
+  autocmd FileType coffee nnoremap <buffer> <leader>rc :CoffeeCompile vert<cr>
+  autocmd FileType coffee nnoremap <buffer> <leader>rw :CoffeeWatch vert<cr>
+augroup END
+
 augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
