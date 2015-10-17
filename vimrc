@@ -259,7 +259,6 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
 
 " Ultisnips
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.vimfiles/vimsnippets']
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
