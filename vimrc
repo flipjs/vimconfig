@@ -169,6 +169,10 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
+" Visual-star-search
+nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
+vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
+
 " Easyclip
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
