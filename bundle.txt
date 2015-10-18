@@ -51,3 +51,4 @@ https://github.com/tommcdo/vim-exchange.git
 https://github.com/flipjs/vim-operator-highlight.git
 https://github.com/tpope/vim-abolish.git
 https://github.com/svermeulen/vim-easyclip.git
+https://github.com/bronson/vim-visual-star-search.git
