@@ -154,8 +154,6 @@ nnoremap { {zz
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
-" search word under cursor project-wide
-nmap <c-q> :Ag <c-r>=expand("<cword>")<cr><cr>
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
 
