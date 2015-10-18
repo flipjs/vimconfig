@@ -76,9 +76,12 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" change cursor shape in different modes
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" change cursorline and matchparen colors (cterm only)
+highlight CursorLine ctermbg=233
+highlight MatchParen cterm=none ctermbg=white ctermfg=black
+" change matchparen colors to match cursorline on insert mode
+autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
+autocmd InsertLeave * highlight MatchParen ctermbg=white ctermfg=black
 
 " folds
 set viewdir=~/.vimfiles/vimviews
