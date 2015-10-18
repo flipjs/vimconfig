@@ -115,8 +115,6 @@ vnoremap L g_
 " remove original mapping for ^ and $
 nnoremap ^ <nop>
 nnoremap $ <nop>
-" remap Y to yank from cursor to end of line
-nnoremap Y y$
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
@@ -149,16 +147,14 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
-" make copy/paste behaves similar to other text editors
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-" Insert empty line between brackets on <enter>
+" insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 " search word under cursor project-wide
 nmap <c-q> :Ag <c-r>=expand("<cword>")<cr><cr>
+" easyclip shadows m, rebind m to gm
+nnoremap gm m
 
 
 " ------------------------ Function Mapping ------------------------- "
@@ -172,6 +168,10 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+" Easyclip
+imap <c-v> <plug>EasyClipInsertModePaste
+cmap <c-v> <plug>EasyClipCommandModePaste
 
 " Gitgutter
 " tell gitgutter to allow overriding gutter color
@@ -223,6 +223,12 @@ nmap ga <Plug>(EasyAlign)
 
 
 " ------------------------- Plugin Settings ------------------------- "
+
+" Easyclip
+let g:EasyClipAutoFormat = 1
+let g:EasyClipUseSubstituteDefaults = 1
+let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
+let g:EasyClipShareYanks = 1
 
 " Operator-highlight (flipjs forked version)
 let g:ophigh_color = 196
