@@ -21,7 +21,7 @@ filetype plugin indent on
 syntax on
 
 
-" --------------------- Custom Configuration ---------------------- "
+" ---------------------- Custom Configuration ----------------------- "
 
 " Ensure vim-sensible is installed, for set defaults
 
@@ -90,7 +90,7 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 
-" ------------------------ Custom Mapping ------------------------- "
+" ------------------------- Custom Mapping -------------------------- "
 
 " mapleader is comma
 let mapleader = ","
@@ -140,6 +140,8 @@ nnoremap <leader>sc <c-w>c
 nnoremap <leader>sq :qa<cr>
 nnoremap <leader>ss :vertical resize 120<cr>
 nnoremap <leader>se <c-w>=
+nnoremap <leader>sf <c-w>\|
+nnoremap <leader>sd :bp\|bd #<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
