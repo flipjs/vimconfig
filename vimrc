@@ -232,7 +232,7 @@ nmap ga <Plug>(EasyAlign)
 " ------------------------- Plugin Settings ------------------------- "
 
 " Easyclip
-let g:EasyClipAutoFormat = 1
+let g:EasyClipAutoFormat = 0
 let g:EasyClipUseSubstituteDefaults = 1
 let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
 let g:EasyClipShareYanks = 1
