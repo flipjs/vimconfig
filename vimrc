@@ -65,6 +65,7 @@ set showbreak=»\
 set textwidth=96
 set formatoptions=qrn1
 set nolist
+set listchars=tab:▸\ ,eol:¬
 
 set splitbelow
 set splitright
@@ -145,6 +146,7 @@ nnoremap <leader>sd :bp\|bd #<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
+nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
 " center screen when doing n, N, { and }
@@ -266,6 +268,9 @@ let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
 
 " YouCompleteMe
+if !exists("g:ycm_semantic_triggers")
+   let g:ycm_semantic_triggers = {}
+endif
 set complete=.,b,u,]
 set wildmode=longest,list,full
 set completeopt=menu,preview
@@ -275,6 +280,13 @@ let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabContextDefaultCompletionType = '<c-n>'
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'ruby' : ['.', '::'],
+  \   'erlang' : [':'],
+  \ }
 
 " Ultisnips
 " put ultisnips snippets inside ~/.vim/UltiSnips
@@ -409,7 +421,7 @@ endfunction
 
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost *.js call s:syntastic()
+  autocmd BufWritePost *.js,*.ts call s:syntastic()
 augroup END
 
 function! s:syntastic()
@@ -507,6 +519,12 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
   autocmd FileType javascript inoremap iff if ()<c-o>i
+augroup END
+
+augroup TypeScript
+  autocmd!
+  autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && tsc %<cr>
+  autocmd FileType typescript inoremap iff if ()<c-o>i
 augroup END
 
 augroup CoffeeScript
