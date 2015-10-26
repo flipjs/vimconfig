@@ -79,10 +79,10 @@ set noswapfile
 
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
-highlight MatchParen cterm=none ctermbg=white ctermfg=black
+highlight MatchParen cterm=none ctermbg=46 ctermfg=black
 " change matchparen colors to match cursorline on insert mode
 autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-autocmd InsertLeave * highlight MatchParen ctermbg=white ctermfg=black
+autocmd InsertLeave * highlight MatchParen ctermbg=46 ctermfg=black
 
 " folds
 set viewdir=~/.vimfiles/vimviews
@@ -173,6 +173,12 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+" Typescript
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_options = '-sourcemap'
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
@@ -518,13 +524,17 @@ augroup JavaScript
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  autocmd FileType javascript inoremap iff if ()<c-o>i
+  autocmd FileType javascript inoremap <buffer> iff if ()<c-o>i
 augroup END
 
 augroup TypeScript
   autocmd!
   autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && tsc %<cr>
-  autocmd FileType typescript inoremap iff if ()<c-o>i
+  autocmd FileType typescript inoremap <buffer> iff if ()<c-o>i
+  " insert empty line between brackets on <enter> and explicit <tab>
+  autocmd FileType typescript inoremap <buffer> {<cr> {<cr>}<c-o>O<tab>
+  autocmd FileType typescript inoremap <buffer> [<cr> [<cr>]<c-o>O<tab>
+  autocmd FileType typescript inoremap <buffer> (<cr> (<cr>)<c-o>O<tab>
 augroup END
 
 augroup CoffeeScript
