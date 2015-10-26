@@ -54,3 +54,5 @@ https://github.com/tpope/vim-abolish.git
 https://github.com/svermeulen/vim-easyclip.git
 https://github.com/bronson/vim-visual-star-search.git
 https://github.com/leafgarland/typescript-vim.git
+https://github.com/mxw/vim-jsx.git
+https://github.com/othree/yajs.vim.git
