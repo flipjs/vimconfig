@@ -174,12 +174,6 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 
 " -------------------- Plugin-dependent Mapping --------------------- "
 
-" Typescript
-let g:typescript_indent_disable = 1
-let g:typescript_compiler_options = '-sourcemap'
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
 " Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
 vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
@@ -188,23 +182,11 @@ vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('gr
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
 
-" Gitgutter
-" tell gitgutter to allow overriding gutter color
-let g:gitgutter_override_sign_column_highlight = 0
-" override gutter color
-highlight SignColumn ctermfg=118
-
 " Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
 
-" Unite
-" add unite mapping here
-
 " Vimfiler
 nnoremap <leader>fe :VimFiler<cr>
-
-" Vimshell
-" add vimshell mapping here
 
 " CtrlP
 nnoremap <leader>ff :CtrlP<cr>
@@ -238,6 +220,22 @@ nmap ga <Plug>(EasyAlign)
 
 
 " ------------------------- Plugin Settings ------------------------- "
+
+" Buftabline
+let g:buftabline_show = 1
+let g:buftabline_indicators = 1
+
+" Gitgutter
+" tell gitgutter to allow overriding gutter color
+let g:gitgutter_override_sign_column_highlight = 0
+" override gutter color
+highlight SignColumn ctermfg=118
+
+" Typescript
+let g:typescript_indent_disable = 1
+let g:typescript_compiler_options = '-sourcemap'
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " Easyclip
 let g:EasyClipAutoFormat = 0
