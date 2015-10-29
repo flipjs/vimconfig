@@ -1,4 +1,5 @@
 " Angular
+inoreabbrev <buffer> ngstrictdi data-ng-strict-di
 inoreabbrev <buffer> ngapp data-ng-app
 inoreabbrev <buffer> ngbind data-ng-bind
 inoreabbrev <buffer> ngbindhtml data-ng-bind-html
