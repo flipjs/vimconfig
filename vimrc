@@ -154,6 +154,8 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
+" es6 template string
+inoremap <leader>tp ${}<c-o>i
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
