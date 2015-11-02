@@ -79,10 +79,10 @@ set noswapfile
 
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
-highlight MatchParen cterm=none ctermbg=46 ctermfg=black
+highlight MatchParen cterm=none ctermbg=21 ctermfg=black
 " change matchparen colors to match cursorline on insert mode
 autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-autocmd InsertLeave * highlight MatchParen ctermbg=46 ctermfg=black
+autocmd InsertLeave * highlight MatchParen ctermbg=21 ctermfg=black
 
 " folds
 set viewdir=~/.vimfiles/vimviews
@@ -155,7 +155,7 @@ nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
 " es6 template string
-inoremap <leader>tp ${}<c-o>i
+inoremap <leader>tp ${}<c-o>h
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
@@ -269,8 +269,8 @@ let g:syntastic_error_symbol='X'
 let g:syntastic_warning_symbol='!'
 let g:syntastic_auto_loc_list=2
 let g:syntastic_loc_list_height=5
-" let g:syntastic_javascript_checkers=['jshint', 'jscs']
-let g:syntastic_javascript_checkers=['standard']
+let g:syntastic_javascript_checkers=['jshint', 'jscs']
+" let g:syntastic_javascript_checkers=['standard']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_html_tidy_ignore_errors=["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
 
@@ -524,6 +524,7 @@ augroup JavaScript
   autocmd!
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
+  autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
   autocmd FileType javascript inoremap <buffer> iff if ()<c-o>i
 augroup END
