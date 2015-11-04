@@ -126,6 +126,9 @@ nnoremap k gk
 inoremap jj <esc>
 " highlight last inserted text
 nnoremap gV `[v`]
+" better indentation when on visual mode
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
 " select all text
 nnoremap <leader>aa ggVG
 " visual warning when text past 96 column
