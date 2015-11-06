@@ -267,15 +267,15 @@ let g:ctrlp_match_window_reversed = 0
 let g:vimfiler_as_default_explorer = 1
 
 " Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_error_symbol='X'
-let g:syntastic_warning_symbol='!'
-let g:syntastic_auto_loc_list=2
-let g:syntastic_loc_list_height=5
-let g:syntastic_javascript_checkers=['jshint', 'jscs']
-" let g:syntastic_javascript_checkers=['standard']
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = 'X'
+let g:syntastic_warning_symbol = '!'
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_loc_list_height = 5
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+" let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
-let g:syntastic_html_tidy_ignore_errors=["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
+let g:syntastic_html_tidy_ignore_errors = ["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
 
 " YouCompleteMe
 if !exists("g:ycm_semantic_triggers")
