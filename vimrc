@@ -161,6 +161,8 @@ nnoremap } }zz
 nnoremap { {zz
 " es6 template string
 inoremap <leader>tp ${}<c-o>h
+" join 2 lines on insert mode when cursor is on second line
+inoremap <leader>kk <esc>kJxi
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
