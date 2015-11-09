@@ -66,6 +66,14 @@ snippet iife "Immediately-Invoked Function Expression (iife)"
 })($2);
 endsnippet
 
+snippet vfe "void IIFE"
+void (function ($1) {
+	'use strict'
+
+	${VISUAL}$0
+})($2)
+endsnippet
+
 snippet timeout "setTimeout function"
 setTimeout(function () {
 	${VISUAL}$0
