@@ -3,7 +3,11 @@
 " Version: 3.0
 " Author: Felipe Apostol <flipjs.io@gmail.com>
 " Date: 11 October 2015
-" Note: Filetype configuration defined inside ftplugin directory
+" Note: * Filetype configuration defined inside ftplugin directory
+"       * Required directories:
+"         ~/.vimfiles/vimbundle
+"         ~/.vimfiles/vimviews
+"         ~/.vimfiles/vimundo
 " *********************************************************************
 
 
