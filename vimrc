@@ -130,11 +130,15 @@ nnoremap j gj
 nnoremap k gk
 " jj is escape
 inoremap jj <esc>
+" make copy & paste behave like in modern editors
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
 " highlight last inserted text
 nnoremap gV `[v`]
-" better indentation when on visual mode
-vnoremap < <gv  " better indentation
-vnoremap > >gv  " better indentation
+" stay on visual mode when indenting
+vnoremap < <`[v`]
+vnoremap > >`[v`]
 " select all text
 nnoremap <leader>aa ggVG
 " visual warning when text past 96 column
@@ -143,6 +147,11 @@ nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
 nnoremap <leader>ln :match none<cr>
 " syntactic error window
 nnoremap <leader>ll :Errors<cr>
+nnoremap <leader>lo :SyntasticToggleMode<cr>
+" switch buffers
+nnoremap <silent> <leader>bn :bnext<cr>
+nnoremap <silent> <leader>bp :bprev<cr>
+nnoremap <silent> <leader>bb :b #<cr>
 " splits shortcuts
 nnoremap <leader>sv :vsplit<cr>
 nnoremap <leader>sb :split<cr>
@@ -164,9 +173,9 @@ nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
 " es6 template string
-inoremap <leader>tp ${}<c-o>h
+inoremap ,tp ${}<c-o>h
 " join 2 lines on insert mode when cursor is on second line
-inoremap <leader>kk <esc>kJxi
+inoremap ,kk <esc>kJxi
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
@@ -207,8 +216,6 @@ nnoremap <leader>fb :CtrlPBuffer<cr>
 nnoremap <leader>fr :CtrlPMRU<cr>
 nnoremap <leader>fm :CtrlPMixed<cr>
 nnoremap <leader>fc :CtrlPCurWD<cr>
-nnoremap <leader>bb :CtrlPBuffer<cr>
-nnoremap <leader>bn :bn<cr> """ switch between last 2 buffers being edited
 
 " Tagbar
 nnoremap <leader>tb :TagbarToggle<cr>
@@ -251,10 +258,12 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Easyclip
-let g:EasyClipAutoFormat = 0
 let g:EasyClipUseSubstituteDefaults = 1
-let g:EasyClipAlwaysMoveCursorToEndOfPaste = 1
 let g:EasyClipShareYanks = 1
+" do not autoformat pasted text
+let g:EasyClipAutoFormat = 0
+" disable this feature, see settings at the top (search modern editors)
+let g:EasyClipAlwaysMoveCursorToEndOfPaste = 0
 
 " Operator-highlight (flipjs forked version)
 let g:ophigh_color = 196
@@ -305,6 +314,8 @@ let g:ycm_semantic_triggers =  {
   \   'ruby' : ['.', '::'],
   \   'erlang' : [':'],
   \ }
+" let g:ycm_filetype_specific_completion_to_disable = { 'javascript': 1 }
+" let g:ycm_semantic_completion_toggle = '<c-f>'
 
 " Ultisnips
 " put ultisnips snippets inside ~/.vim/UltiSnips
