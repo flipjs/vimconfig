@@ -28,7 +28,7 @@ ${1:key}: ${2:'${3:value}'}${4:, }
 endsnippet
 
 snippet proto "Prototype (proto)"
-${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
+${1:class_name}.prototype.${2:method_name} = function $2 (${3:first_argument}) {
 	${VISUAL}$0
 }
 
@@ -59,15 +59,15 @@ ${1:var }${2:function_name} = function $2 (${3}) {
 endsnippet
 
 snippet iife "Immediately-Invoked Function Expression (iife)"
-(function ($1) {
+(function iife ($1) {
 	'use strict'
 
 	${VISUAL}$0
 })($2);
 endsnippet
 
-snippet vfe "void IIFE"
-void (function ($1) {
+snippet vife "void IIFE"
+void (function iife ($1) {
 	'use strict'
 
 	${VISUAL}$0
