@@ -95,148 +95,12 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 
-" ------------------------- Custom Mapping -------------------------- "
+" --------------------------- Map Leader ---------------------------- "
 
 " mapleader is comma
 let mapleader = ","
 " get comma functionality back using ,,
 nnoremap ,, ,
-
-" edit and source .vimrc
-nnoremap <leader>ve :edit $MYVIMRC<cr>
-nnoremap <leader>vs :source $MYVIMRC<cr>
-" ctrl-s to save
-noremap <c-s> :update<cr><esc>
-vnoremap <c-s> <esc>:update<cr><esc>
-inoremap <c-s> <esc>:update<cr><esc>
-" close current buffer
-nnoremap <leader>dd :bd<cr>
-" save current buffer
-nnoremap <leader>ww :w<cr>
-" close saved buffer(s)
-nnoremap <leader>qq :q<cr>
-" quit without saving
-nnoremap <leader>QQ :q!<cr>
-" remap % ^ $
-nnoremap Q %
-nnoremap H ^
-nnoremap L $
-vnoremap L g_
-" remove original mapping for ^ and $
-nnoremap ^ <nop>
-nnoremap $ <nop>
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
-" jj is escape
-inoremap jj <esc>
-" make copy & paste behave like in modern editors
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
-" highlight last inserted text
-nnoremap gV `[v`]
-" stay on visual mode when indenting
-vnoremap < <`[v`]
-vnoremap > >`[v`]
-" select all text
-nnoremap <leader>aa ggVG
-" visual warning when text past 96 column
-" match ErrorMsg '\%>96v.\+'
-nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
-nnoremap <leader>ln :match none<cr>
-" syntactic error window
-nnoremap <leader>ll :Errors<cr>
-nnoremap <leader>lo :SyntasticToggleMode<cr>
-" switch buffers
-nnoremap <silent> <leader>bn :bnext<cr>
-nnoremap <silent> <leader>bp :bprev<cr>
-nnoremap <silent> <leader>bb :b #<cr>
-" splits shortcuts
-nnoremap <leader>sv :vsplit<cr>
-nnoremap <leader>sb :split<cr>
-nnoremap <leader>sc <c-w>c
-nnoremap <leader>sq :qa<cr>
-nnoremap <leader>ss :vertical resize 120<cr>
-nnoremap <leader>se <c-w>=
-nnoremap <leader>sf <c-w>\|
-nnoremap <leader>sd :bp\|bd #<cr>
-" switch filetype
-nnoremap <leader>ftt :set ft?<cr>
-nnoremap <leader>ftj :set ft=javascript<cr>
-nnoremap <leader>fts :set ft=typescript<cr>
-nnoremap <leader>fth :set ft=html<cr>
-nnoremap <leader>ftc :set ft=css<cr>
-" center screen when doing n, N, { and }
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap } }zz
-nnoremap { {zz
-" es6 template string
-inoremap ,tp ${}<c-o>h
-" join 2 lines on insert mode when cursor is on second line
-inoremap ,kk <esc>kJxi
-" insert empty line between brackets on <enter>
-inoremap {<cr> {<cr>}<c-o>O
-inoremap [<cr> [<cr>]<c-o>O
-inoremap (<cr> (<cr>)<c-o>O
-" easyclip shadows m, rebind m to gm
-nnoremap gm m
-
-
-" ------------------------ Function Mapping ------------------------- "
-
-" file heading
-nnoremap <leader>hf mz:execute FileHeader()`zjA
-" line heading
-nnoremap <leader>hl :call LineHeader(67, '
-" delete empty buffers
-nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
-
-
-" -------------------- Plugin-dependent Mapping --------------------- "
-
-" Visual-star-search
-nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
-vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
-
-" Easyclip
-imap <c-v> <plug>EasyClipInsertModePaste
-cmap <c-v> <plug>EasyClipCommandModePaste
-
-" Nerdtree
-nnoremap <leader>nt :NERDTreeToggle<cr>
-
-" Vimfiler
-nnoremap <leader>fe :VimFiler<cr>
-
-" CtrlP
-nnoremap <leader>ff :CtrlP<cr>
-nnoremap <leader>fb :CtrlPBuffer<cr>
-nnoremap <leader>fr :CtrlPMRU<cr>
-nnoremap <leader>fm :CtrlPMixed<cr>
-nnoremap <leader>fc :CtrlPCurWD<cr>
-
-" Tagbar
-nnoremap <leader>tb :TagbarToggle<cr>
-
-" Gundo
-nnoremap <leader>uu :GundoToggle<cr>
-nnoremap <leader>ue :earlier 1f<cr>
-nnoremap <leader>ul :later 1f<cr>
-
-" Autoformat
-noremap <c-t> :Autoformat<cr>
-
-" Emmet
-imap <c-e> <c-y>,
-
-" Dash
-nmap <leader>hh <Plug>DashSearch
-
-" Vim-easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 
 " ------------------------- Plugin Settings ------------------------- "
@@ -600,6 +464,145 @@ if exists('$ITERM_PROFILE')
     let &t_EI = "\<Esc>]50;CursorShape=0\x7"
   endif
 end
+
+
+" -------------------- Plugin-dependent Mapping --------------------- "
+
+" Visual-star-search
+nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
+vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('grep', '--literal ' . shellescape(@/))<cr>
+
+" Easyclip
+imap <c-v> <plug>EasyClipInsertModePaste
+cmap <c-v> <plug>EasyClipCommandModePaste
+
+" Nerdtree
+nnoremap <leader>nt :NERDTreeToggle<cr>
+
+" Vimfiler
+nnoremap <leader>fe :VimFiler<cr>
+
+" CtrlP
+nnoremap <leader>ff :CtrlP<cr>
+nnoremap <leader>fb :CtrlPBuffer<cr>
+nnoremap <leader>fr :CtrlPMRU<cr>
+nnoremap <leader>fm :CtrlPMixed<cr>
+nnoremap <leader>fc :CtrlPCurWD<cr>
+
+" Tagbar
+nnoremap <leader>tb :TagbarToggle<cr>
+
+" Gundo
+nnoremap <leader>uu :GundoToggle<cr>
+nnoremap <leader>ue :earlier 1f<cr>
+nnoremap <leader>ul :later 1f<cr>
+
+" Autoformat
+noremap <c-t> :Autoformat<cr>
+
+" Emmet
+imap <c-e> <c-y>,
+
+" Dash
+nmap <leader>hh <Plug>DashSearch
+
+" Vim-easy-align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+
+" ------------------------ Function Mapping ------------------------- "
+
+" file heading
+nnoremap <leader>hf mz:execute FileHeader()`zjA
+" line heading
+nnoremap <leader>hl :call LineHeader(67, '
+" delete empty buffers
+nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
+
+
+" ------------------------- Custom Mapping -------------------------- "
+
+" edit and source .vimrc
+nnoremap <leader>ve :edit $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
+" ctrl-s to save
+noremap <c-s> :update<cr><esc>
+vnoremap <c-s> <esc>:update<cr><esc>
+inoremap <c-s> <esc>:update<cr><esc>
+" close current buffer
+nnoremap <leader>dd :bd<cr>
+" save current buffer
+nnoremap <leader>ww :w<cr>
+" close saved buffer(s)
+nnoremap <leader>qq :q<cr>
+" quit without saving
+nnoremap <leader>QQ :q!<cr>
+" remap % ^ $
+nnoremap Q %
+nnoremap H ^
+nnoremap L $
+vnoremap L g_
+" remove original mapping for ^ and $
+nnoremap ^ <nop>
+nnoremap $ <nop>
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+" jj is escape
+inoremap jj <esc>
+" make copy & paste behave like in modern editors
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+" highlight last inserted text
+nnoremap gV `[v`]
+" stay on visual mode when indenting
+vnoremap < <`[v`]
+vnoremap > >`[v`]
+" select all text
+nnoremap <leader>aa ggVG
+" visual warning when text past 96 column
+" match ErrorMsg '\%>96v.\+'
+nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
+nnoremap <leader>ln :match none<cr>
+" syntactic error window
+nnoremap <leader>ll :Errors<cr>
+nnoremap <leader>lo :SyntasticToggleMode<cr>
+" switch buffers
+nnoremap <silent> <leader>bn :bnext<cr>
+nnoremap <silent> <leader>bp :bprev<cr>
+nnoremap <silent> <leader>bb :b #<cr>
+" splits shortcuts
+nnoremap <leader>sv :vsplit<cr>
+nnoremap <leader>sb :split<cr>
+nnoremap <leader>sc <c-w>c
+nnoremap <leader>sq :qa<cr>
+nnoremap <leader>ss :vertical resize 120<cr>
+nnoremap <leader>se <c-w>=
+nnoremap <leader>sf <c-w>\|
+nnoremap <leader>sd :bp\|bd #<cr>
+" switch filetype
+nnoremap <leader>ftt :set ft?<cr>
+nnoremap <leader>ftj :set ft=javascript<cr>
+nnoremap <leader>fts :set ft=typescript<cr>
+nnoremap <leader>fth :set ft=html<cr>
+nnoremap <leader>ftc :set ft=css<cr>
+" center screen when doing n, N, { and }
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap } }zz
+nnoremap { {zz
+" es6 template string
+inoremap ,tp ${}<c-o>h
+" join 2 lines on insert mode when cursor is on second line
+inoremap ,kk <esc>kJxi
+" insert empty line between brackets on <enter>
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
+" easyclip shadows m, rebind m to gm
+nnoremap gm m
 
 
 " ------------------------------ Notes ------------------------------ "
