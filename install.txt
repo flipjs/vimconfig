@@ -1,0 +1,8 @@
+STEPS
+1. create .vimfiles directory inside your HOME directory
+2. git clone vimconfig inside .vimfiles directory
+3. create vimbundle, vimundo and vimviews directories inside .vimfiles directory
+4. move bundle.sh into vimbundle directory and run it
+5. see notes inside bundle.sh for additional steps
+6. run vim and execute :Helptags
+7. thats it!
