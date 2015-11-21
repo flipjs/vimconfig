@@ -4,7 +4,5 @@ setlocal foldmethod=syntax
 setlocal foldlevel=99
 
 " Abbreviations
-inoreabbrev <buffer> usestr 'use strict'
-inoreabbrev <buffer> <buffer> usestrict 'use strict'
-inoremap <buffer> ,ai ${}<c-o>h
 inoremap <buffer> ,af =>
+inoremap <buffer> ,at ->
