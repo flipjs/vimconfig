@@ -3,11 +3,6 @@
 " Version: 3.0
 " Author: Felipe Apostol <flipjs.io@gmail.com>
 " Date: 11 October 2015
-" Note: * Filetype configuration defined inside ftplugin directory
-"       * Required directories:
-"         ~/.vimfiles/vimbundle
-"         ~/.vimfiles/vimviews
-"         ~/.vimfiles/vimundo
 " *********************************************************************
 
 
@@ -353,8 +348,6 @@ let g:rainbow_conf = {
     \       'css': 0,
     \   }
     \}
-" hack to work rainbow with javascript
-autocmd FileType javascript syntax clear jsFuncBlock
 
 " Gundo
 set undodir=~/.vimfiles/vimundo
@@ -412,7 +405,6 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  autocmd FileType javascript inoremap <buffer> iff if ()<c-o>i
 augroup END
 
 augroup TypeScript
@@ -601,6 +593,15 @@ inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 " easyclip shadows m, rebind m to gm
 nnoremap gm m
+
+
+" ----------------------- Bugfix / Workaround ----------------------- "
+
+" CtrlP not finding files in some projects/directories
+set shell=/bin/bash
+
+" Rainbow doesn't work well with JavaScript
+autocmd FileType javascript syntax clear jsFuncBlock
 
 
 " ------------------------------ Notes ------------------------------ "
