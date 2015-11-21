@@ -1,61 +1,68 @@
-Ensure command below is set in .vimrc to configure vim bundle directory
-call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
+#!/bin/sh
 
-Required plugins with this vim configuration:
-* note: tern for vim is slow, you may not want to install it
+#Ensure you have vim pathogen setup and the line below in your .vimrc
+#call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
+#
+#Note: tern for vim is slow, you may not want to install it
+#
+#Post Install: additional steps to do inside the plugin
+#* YouCompleteMe
+#  - git submodule update --init --recursive
+#  - ./install.py
+#* tern_for_vim
+#  - npm install
+#* vimproc.vim
+#  - make
 
-https://github.com/tpope/vim-sensible.git
-https://github.com/tpope/vim-unimpaired.git
-https://github.com/tpope/vim-fugitive.git
-https://github.com/airblade/vim-gitgutter.git
-https://github.com/rking/ag.vim.git
-https://github.com/kien/ctrlp.vim.git
-https://github.com/scrooloose/nerdtree.git
-https://github.com/tpope/vim-commentary.git
-https://github.com/tpope/vim-surround.git
-https://github.com/tpope/vim-repeat.git
-https://github.com/Raimondi/delimitMate.git
-https://github.com/jelera/vim-javascript-syntax.git
-https://github.com/othree/javascript-libraries-syntax.vim.git
-https://github.com/pangloss/vim-javascript.git
-https://github.com/crusoexia/vim-javascript-lib.git
-https://github.com/scrooloose/syntastic.git
-*https://github.com/marijnh/tern_for_vim.git
-  - npm install
-https://github.com/Valloric/YouCompleteMe.git
-  - git submodule update --init --recursive
-  - ./install.py
-https://github.com/SirVer/ultisnips.git
-https://github.com/ervandew/supertab.git
-https://github.com/editorconfig/editorconfig-vim.git
-https://github.com/luochen1990/rainbow.git
-https://github.com/sjl/gundo.vim.git
-https://github.com/rizzatti/dash.vim.git
-https://github.com/Chiel92/vim-autoformat.git
-https://github.com/mattn/emmet-vim.git
-https://github.com/elixir-lang/vim-elixir.git
-https://github.com/wavded/vim-stylus.git
-https://github.com/kchmck/vim-coffee-script.git
-https://github.com/junegunn/vim-easy-align.git
-https://github.com/crusoexia/vim-monokai.git
-https://github.com/elzr/vim-json.git
-https://github.com/itchyny/lightline.vim.git
-https://github.com/christoomey/vim-tmux-navigator
-https://github.com/ryanss/vim-hackernews.git
-https://github.com/joshhartigan/vim-reddit.git
-https://github.com/Shougo/unite.vim.git
-https://github.com/Shougo/vimfiler.vim.git
-https://github.com/Shougo/vimproc.vim.git
-  - make
-https://github.com/Shougo/vimshell.vim.git
-https://github.com/majutsushi/tagbar.git
-https://github.com/tommcdo/vim-exchange.git
-https://github.com/flipjs/vim-operator-highlight.git
-https://github.com/tpope/vim-abolish.git
-https://github.com/svermeulen/vim-easyclip.git
-https://github.com/bronson/vim-visual-star-search.git
-https://github.com/leafgarland/typescript-vim.git
-https://github.com/mxw/vim-jsx.git
-https://github.com/othree/yajs.vim.git
-https://github.com/ap/vim-buftabline.git
-https://github.com/spiiph/vim-space.git
+git clone https://github.com/tpope/vim-sensible.git
+git clone https://github.com/tpope/vim-unimpaired.git
+git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/rking/ag.vim.git
+git clone https://github.com/kien/ctrlp.vim.git
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/tpope/vim-commentary.git
+git clone https://github.com/tpope/vim-surround.git
+git clone https://github.com/tpope/vim-repeat.git
+git clone https://github.com/Raimondi/delimitMate.git
+git clone https://github.com/jelera/vim-javascript-syntax.git
+git clone https://github.com/othree/javascript-libraries-syntax.vim.git
+git clone https://github.com/pangloss/vim-javascript.git
+git clone https://github.com/crusoexia/vim-javascript-lib.git
+git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/marijnh/tern_for_vim.git
+git clone https://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/SirVer/ultisnips.git
+git clone https://github.com/ervandew/supertab.git
+git clone https://github.com/editorconfig/editorconfig-vim.git
+git clone https://github.com/luochen1990/rainbow.git
+git clone https://github.com/sjl/gundo.vim.git
+git clone https://github.com/rizzatti/dash.vim.git
+git clone https://github.com/Chiel92/vim-autoformat.git
+git clone https://github.com/mattn/emmet-vim.git
+git clone https://github.com/elixir-lang/vim-elixir.git
+git clone https://github.com/wavded/vim-stylus.git
+git clone https://github.com/kchmck/vim-coffee-script.git
+git clone https://github.com/junegunn/vim-easy-align.git
+git clone https://github.com/crusoexia/vim-monokai.git
+git clone https://github.com/elzr/vim-json.git
+git clone https://github.com/itchyny/lightline.vim.git
+git clone https://github.com/christoomey/vim-tmux-navigator
+git clone https://github.com/ryanss/vim-hackernews.git
+git clone https://github.com/joshhartigan/vim-reddit.git
+git clone https://github.com/Shougo/unite.vim.git
+git clone https://github.com/Shougo/vimfiler.vim.git
+git clone https://github.com/Shougo/vimproc.vim.git
+git clone https://github.com/Shougo/vimshell.vim.git
+git clone https://github.com/majutsushi/tagbar.git
+git clone https://github.com/tommcdo/vim-exchange.git
+git clone https://github.com/flipjs/vim-operator-highlight.git
+git clone https://github.com/tpope/vim-abolish.git
+git clone https://github.com/svermeulen/vim-easyclip.git
+git clone https://github.com/bronson/vim-visual-star-search.git
+git clone https://github.com/leafgarland/typescript-vim.git
+git clone https://github.com/mxw/vim-jsx.git
+git clone https://github.com/othree/yajs.vim.git
+git clone https://github.com/ap/vim-buftabline.git
+git clone https://github.com/spiiph/vim-space.git
+
