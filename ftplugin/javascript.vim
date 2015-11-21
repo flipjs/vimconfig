@@ -6,5 +6,6 @@ setlocal foldlevel=99
 " Abbreviations
 inoreabbrev <buffer> usestr 'use strict'
 inoreabbrev <buffer> <buffer> usestrict 'use strict'
+inoremap <buffer> iff if ()<c-o>i
 inoremap <buffer> ,ai ${}<c-o>h
 inoremap <buffer> ,af =>
