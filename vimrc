@@ -148,8 +148,8 @@ let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
-let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-" let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+let g:syntastic_javascript_checkers = ['standard']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_html_tidy_ignore_errors = ["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
 
@@ -434,6 +434,7 @@ augroup END
 
 " -------------------------- Abbreviations -------------------------- "
 
+" Note: some abbreviations are defined inside ftplugin directory
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 cnoreabbrev QA qa
@@ -442,7 +443,13 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 inoreabbrev funciton function
 inoreabbrev functon function
-" Note: some abbreviations are defined inside ftplugin directory
+" kke is being used as a map to equal sign, use abbrev below for affected words
+inoreabbrev bkp bookkeep
+inoreabbrev Bkp Bookkeep
+inoreabbrev BKP BOOKKEEP
+inoreabbrev bkping bookkeeping
+inoreabbrev Bkping Bookkeeping
+inoreabbrev BKPING BOOKKEEPING
 
 
 " ------------------------- for iTerm only -------------------------- "
@@ -604,9 +611,11 @@ inoremap kkd <cr><esc>O
 inoremap kkh <esc>i
 inoremap kkl <esc>la
 inoremap kkm <esc>la,
+" note: have side effect for word booKKEeping, see word abbrev
 inoremap kke =
 inoremap kkn :
 inoremap kko ;
+inoremap kkA <esc>A
 " join 2 lines on insert mode when cursor is on second line
 inoremap kkj <esc>kJxi
 
