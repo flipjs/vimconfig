@@ -467,6 +467,8 @@ vnoremap <leader>* :<c-u>call VisualStarSearchSet('/', 'raw')<cr>:call ag#Ag('gr
 " Easyclip
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
+" easyclip shadows m, rebind m to gm
+nnoremap gm m
 
 " Nerdtree
 nnoremap <leader>nt :NERDTreeToggle<cr>
@@ -585,14 +587,28 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
-" join 2 lines on insert mode when cursor is on second line
-inoremap ,kk <esc>kJxi
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
-" easyclip shadows m, rebind m to gm
-nnoremap gm m
+" 2 commas become a dot
+inoremap ,, .
+" kk mapping for hard to reach keyboard keys
+inoremap kkp ()<esc>i
+inoremap kkc {}<esc>i
+inoremap kks []<esc>i
+inoremap kka <><esc>i
+inoremap kkq ''<esc>i
+inoremap kkw ""<esc>i
+inoremap kkd <cr><esc>O
+inoremap kkh <esc>i
+inoremap kkl <esc>la
+inoremap kkm <esc>la,
+inoremap kke =
+inoremap kkn :
+inoremap kko ;
+" join 2 lines on insert mode when cursor is on second line
+inoremap kkj <esc>kJxi
 
 
 " ----------------------- Bugfix / Workaround ----------------------- "

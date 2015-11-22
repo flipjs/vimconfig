@@ -4,5 +4,5 @@ setlocal foldmethod=syntax
 setlocal foldlevel=99
 
 " Abbreviations
-inoremap <buffer> ,af =>
-inoremap <buffer> ,at ->
+inoremap <buffer> kkf =>
+inoremap <buffer> kkt ->

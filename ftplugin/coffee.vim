@@ -3,6 +3,6 @@ setlocal foldmethod=indent
 setlocal foldlevel=99
 
 " Abbreviations
-inoremap <buffer> ,ai #{}<c-o>h
-inoremap <buffer> ,af =>
-inoremap <buffer> ,at ->
+inoremap <buffer> kki #{}<c-o>h
+inoremap <buffer> kkf =>
+inoremap <buffer> kkt ->
