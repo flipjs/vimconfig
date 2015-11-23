@@ -148,9 +148,11 @@ let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
+" if no jshintrc found in parent directories, use standard as linter
+autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ? ['jshint', 'jscs'] : ['standard']
 " let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-let g:syntastic_javascript_checkers = ['standard']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+" let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_html_tidy_ignore_errors = ["proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!", "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"]
 
 " YouCompleteMe
