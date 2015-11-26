@@ -142,23 +142,26 @@ let g:ctrlp_match_window_reversed = 0
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
 
+" Autoformat
+let g:formatdef_standard_js = '"standard-format --stdin"'
+let g:formatters_javascript = ['standard_js']
+
 " Syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
-" if no jshintrc found in parent directories, use standard as linter
+" if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
 autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
       \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
       \ ['eslint'] : ['standard']
+" see https://github.com/feross/eslint-config-standard to extend feross/standard
 
-" let g:syntastic_javascript_checkers = ['jshint', 'jscs']
-" let g:syntastic_javascript_checkers = ['standard']
-" let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 let g:syntastic_html_tidy_ignore_errors = [
       \ "proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!",
-      \ "discarding unexpected", "inserting implicit", "missing", "lacks", "element not empty", "letter not allowed here"
+      \ "discarding unexpected", "inserting implicit", "missing", "lacks",
+      \ "element not empty", "letter not allowed here"
       \ ]
 
 " YouCompleteMe
