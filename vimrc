@@ -320,7 +320,7 @@ endfunction
 
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost *.js,*.ts call s:syntastic()
+  autocmd BufWritePost *.js,*.ts,*.php call s:syntastic()
 augroup END
 
 function! s:syntastic()
@@ -336,7 +336,7 @@ let g:vimshell_force_overwrite_statusline = 0
 let g:rainbow_active = 1
 let g:rainbow_conf = {
     \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \   'ctermfgs': [208, 186, 81, 148],
+    \   'ctermfgs': [81, 208, 148, 197],
     \   'operators': '_,_',
     \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
     \   'separately': {
@@ -421,7 +421,6 @@ augroup END
 augroup TypeScript
   autocmd!
   autocmd FileType typescript nnoremap <buffer> <leader>rr :!clear && tsc %<cr>
-  autocmd FileType typescript inoremap <buffer> iff if ()<c-o>i
   " insert empty line between brackets on <enter> and explicit <tab>
   autocmd FileType typescript inoremap <buffer> {<cr> {<cr>}<c-o>O<tab>
   autocmd FileType typescript inoremap <buffer> [<cr> [<cr>]<c-o>O<tab>
@@ -434,6 +433,11 @@ augroup CoffeeScript
   autocmd FileType coffee nnoremap <buffer> <leader>rl :!clear && coffeelint %<cr>
   autocmd FileType coffee nnoremap <buffer> <leader>rc :CoffeeCompile vert<cr>
   autocmd FileType coffee nnoremap <buffer> <leader>rw :CoffeeWatch vert<cr>
+augroup END
+
+augroup PHP
+  autocmd!
+  autocmd FileType php nnoremap <buffer> <leader>rr :!clear && php %<cr>
 augroup END
 
 augroup Elixir
