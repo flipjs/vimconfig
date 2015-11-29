@@ -604,6 +604,7 @@ nnoremap <leader>ftj :set ft=javascript<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
+nnoremap <leader>ftv :set ft=vue<cr>
 " center screen when doing n, N, { and }
 nnoremap n nzz
 nnoremap N Nzz
