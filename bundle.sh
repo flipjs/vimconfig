@@ -65,4 +65,5 @@ git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/othree/yajs.vim.git
 git clone https://github.com/ap/vim-buftabline.git
 git clone https://github.com/spiiph/vim-space.git
-
+git clone https://github.com/digitaltoad/vim-jade.git
+git clone https://github.com/posva/vim-vue.git
