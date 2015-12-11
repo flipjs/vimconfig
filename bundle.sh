@@ -67,3 +67,4 @@ git clone https://github.com/ap/vim-buftabline.git
 git clone https://github.com/spiiph/vim-space.git
 git clone https://github.com/digitaltoad/vim-jade.git
 git clone https://github.com/posva/vim-vue.git
+git clone https://github.com/vim-scripts/TwitVim.git
