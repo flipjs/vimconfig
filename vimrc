@@ -514,7 +514,7 @@ nnoremap <leader>ue :earlier 1f<cr>
 nnoremap <leader>ul :later 1f<cr>
 
 " Autoformat
-noremap <c-t> :Autoformat<cr>
+noremap <c-u> :Autoformat<cr>
 
 " Emmet
 imap <c-e> <c-y>,
