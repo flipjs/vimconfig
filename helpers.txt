@@ -1,0 +1,10 @@
+Install the following helpers (google search on how-to):
+
+* ack
+* ag
+* js-beautify
+* jshint
+* eslint
+* jscs
+* standard / standard-format
+
