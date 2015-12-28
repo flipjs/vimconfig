@@ -52,6 +52,18 @@ function ${1:function_name} ($2) {
 }
 endsnippet
 
+snippet afn "arrow function"
+const ${1:function_name} = ($2) => {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet aafn "anonymous arrow function"
+($1) => {
+	${VISUAL}$0
+}
+endsnippet
+
 snippet vf "Function assigned to var"
 ${1:var }${2:function_name} = function $2 (${3}) {
 	${VISUAL}$0
@@ -178,7 +190,13 @@ snippet prm "param and block (fun)"
 }
 endsnippet
 
-snippet blk "param and block (fun)"
+snippet blk "block scoping"
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet obj "object literal punctuation"
 {
 	${VISUAL}$0
 }
