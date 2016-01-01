@@ -68,3 +68,4 @@ git clone https://github.com/spiiph/vim-space.git
 git clone https://github.com/digitaltoad/vim-jade.git
 git clone https://github.com/posva/vim-vue.git
 git clone https://github.com/vim-scripts/TwitVim.git
+git clone https://github.com/terryma/vim-multiple-cursors.git
