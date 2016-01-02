@@ -1,10 +1,33 @@
-Install the following helpers (google search on how-to):
+Install the following helpers GLOBALLY (google search on how-to):
 
-* ack
-* ag
+
+* ACK
+    OSX:
+      brew install ack
+    Linux:
+      apt-get update
+      apt-get install ack-grep
+* AG
+    OSX
+      brew install the_silver_searcher
+    Linux
+      apt-get update
+      apt-get install silversearcher-ag
+
+
+NPM Packages: (npm install -g)
+
 * js-beautify
 * jshint
-* eslint
 * jscs
-* standard / standard-format
+* standard
+* standard-format
+* eslint
+* eslint-config-standard-react
+* eslint-plugin-standard
+* eslint-config-standard
+* eslint-plugin-react
+* babel-eslint
 
+COPY PASTE THIS:
+npm install -g js-beautify jshint jscs standard standard-format eslint eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-react babel-eslint
