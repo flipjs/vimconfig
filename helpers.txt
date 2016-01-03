@@ -28,6 +28,7 @@ NPM Packages: (npm install -g)
 * eslint-config-standard
 * eslint-plugin-react
 * babel-eslint
+* babel-cli
 
 COPY PASTE THIS:
-npm install -g js-beautify jshint jscs standard standard-format eslint eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-react babel-eslint
+npm install -g js-beautify jshint jscs standard standard-format eslint eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-react babel-eslint babel-cli
