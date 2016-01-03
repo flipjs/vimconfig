@@ -65,6 +65,8 @@ set textwidth=96
 set formatoptions=qrn1
 set nolist
 set listchars=tab:▸\ ,eol:¬
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=120
 
 set splitbelow
 set splitright
