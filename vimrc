@@ -580,6 +580,10 @@ vnoremap < <`[v`]
 vnoremap > >`[v`]
 " bring whole block to column 0
 vnoremap <leader>hh 99<
+" destroy all lines except lines with word under cursor
+nnoremap <leader>di :v/<c-r><c-w>/d<cr>gg
+" destroy all lines except lines with whats in yanks current buffer
+nnoremap <leader>dy :v/<c-r>"/d<cr>gg
 " select all text
 nnoremap <leader>aa ggVG
 " visual warning when text past 96 column
