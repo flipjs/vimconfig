@@ -576,6 +576,8 @@ nnoremap gV `[v`]
 " stay on visual mode when indenting
 vnoremap < <`[v`]
 vnoremap > >`[v`]
+" bring whole block to column 0
+vnoremap <leader>hh 99<
 " select all text
 nnoremap <leader>aa ggVG
 " visual warning when text past 96 column
