@@ -29,6 +29,7 @@ NPM Packages: (npm install -g)
 * eslint-plugin-react
 * babel-eslint
 * babel-cli
+* node-gyp
 
 COPY PASTE THIS:
-npm install -g js-beautify jshint jscs standard standard-format eslint eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-react babel-eslint babel-cli
+npm install -g js-beautify jshint jscs standard standard-format eslint eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-react babel-eslint babel-cli node-gyp
