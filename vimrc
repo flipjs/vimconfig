@@ -24,6 +24,11 @@ syntax on
 
 " Ensure vim-sensible is installed, for set defaults
 
+" no error bell, no visual bell
+set noeb vb t_vb=
+set encoding=utf-8
+set nomodeline
+
 " vim color theme
 set t_Co=256
 set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
@@ -33,11 +38,6 @@ colorscheme monokai
 highlight Normal guibg=black guifg=white
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
-
-" no error bell, no visual bell
-set noeb vb t_vb=
-set encoding=utf-8
-set nomodeline
 
 " may be overridden in .editorconfig
 set tabstop=2
