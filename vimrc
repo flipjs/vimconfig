@@ -104,6 +104,7 @@ imap <c-f>l <Plug>SkipItForward
 imap <c-f>L <Plug>SkipAllForward
 imap <c-f>h <Plug>SkipItBack
 imap <c-f>H <Plug>SkipAllBack
+nmap <c-f> i<c-f><c-f>
 
 " Buftabline
 let g:buftabline_show = 1
