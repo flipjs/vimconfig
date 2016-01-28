@@ -81,15 +81,12 @@ set noswapfile
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
 highlight MatchParen cterm=none ctermbg=201 ctermfg=black
-" change matchparen colors to match cursorline on insert mode
-autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
 
 " folds
 set viewdir=~/.vimfiles/vimviews
 " Note: javascript folds defined in ftplugin directory
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
 
 
 " --------------------------- Map Leader ---------------------------- "
@@ -101,6 +98,12 @@ nnoremap ,, ,
 
 
 " ------------------------- Plugin Settings ------------------------- "
+
+" Skipit
+imap <c-f>l <Plug>SkipItForward
+imap <c-f>L <Plug>SkipAllForward
+imap <c-f>h <Plug>SkipItBack
+imap <c-f>H <Plug>SkipAllBack
 
 " Buftabline
 let g:buftabline_show = 1
@@ -115,8 +118,6 @@ highlight SignColumn ctermfg=118
 " Typescript
 let g:typescript_indent_disable = 1
 let g:typescript_compiler_options = '-sourcemap'
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
 
 " Easyclip
 let g:EasyClipUseSubstituteDefaults = 1
@@ -149,16 +150,11 @@ let g:formatdef_standard_js = '"standard-format --stdin"'
 let g:formatters_javascript = ['standard_js']
 
 " Syntastic
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
-" if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
-autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
-      \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
-      \ ['eslint'] : ['standard']
-" see https://github.com/feross/eslint-config-standard to extend feross/standard
 
 let g:syntastic_html_tidy_ignore_errors = [
       \ "proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!",
@@ -173,7 +169,7 @@ endif
 set complete=.,b,u,]
 set wildmode=longest,list,full
 set completeopt=menu,preview
-autocmd CompleteDone * pclose
+
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
@@ -418,6 +414,12 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
+  " if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
+  autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
+      \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
+      \ ['eslint'] : ['standard']
+  " HACK: Rainbow doesn't work well with JavaScript
+  autocmd FileType javascript syntax clear jsFuncBlock
 augroup END
 
 augroup TypeScript
@@ -446,6 +448,25 @@ augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
   autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
+augroup END
+
+" change matchparen colors to match cursorline on insert mode
+augroup MatchingParen
+  autocmd!
+  autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
+  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
+augroup END
+
+augroup QuickFixCommand
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* nested cwindow
+  autocmd QuickFixCmdPost    l* nested lwindow
+augroup END
+
+
+augroup CursorMoved
+  autocmd!
+  autocmd CompleteDone * pclose
 augroup END
 
 
@@ -622,6 +643,8 @@ nnoremap { {zz
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
+" close html tag
+inoremap ,/ </<c-x><c-o>
 " 2 commas become a dot
 inoremap ,, .
 " kk mapping for hard to reach keyboard keys
@@ -646,13 +669,11 @@ inoremap kkj <esc>kJxi
 " select last entered word
 inoremap kkv <esc>viw
 
+
 " ----------------------- Bugfix / Workaround ----------------------- "
 
 " CtrlP not finding files in some projects/directories
 set shell=/bin/bash
-
-" Rainbow doesn't work well with JavaScript
-autocmd FileType javascript syntax clear jsFuncBlock
 
 
 " ------------------------------ Notes ------------------------------ "
