@@ -24,20 +24,23 @@ syntax on
 
 " Ensure vim-sensible is installed, for set defaults
 
-" no error bell, no visual bell
-set noeb vb t_vb=
-set encoding=utf-8
-set nomodeline
+" macvim only (or any gui vim?)
+set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
+set linespace=4
 
 " vim color theme
 set t_Co=256
-set guifont=Source\ Code\ Pro\ for\ PowerLine:h16
 colorscheme monokai
 
 " override colorscheme monokai background color
 highlight Normal guibg=black guifg=white
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
+
+" no error bell, no visual bell
+set noeb vb t_vb=
+set encoding=utf-8
+set nomodeline
 
 " may be overridden in .editorconfig
 set tabstop=2
@@ -81,12 +84,21 @@ set noswapfile
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
 highlight MatchParen cterm=none ctermbg=201 ctermfg=black
+" change matchparen colors to match cursorline on insert mode
+augroup GroupMatchParen
+  autocmd!
+  autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
+  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
+augroup END
 
 " folds
 set viewdir=~/.vimfiles/vimviews
 " Note: javascript folds defined in ftplugin directory
-" autocmd BufWinLeave *.* mkview
-" autocmd BufWinEnter *.* silent loadview
+augroup GroupBufWin
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview
+augroup END
 
 
 " --------------------------- Map Leader ---------------------------- "
@@ -119,6 +131,11 @@ highlight SignColumn ctermfg=118
 " Typescript
 let g:typescript_indent_disable = 1
 let g:typescript_compiler_options = '-sourcemap'
+augroup GroupQuickFix
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* nested cwindow
+  autocmd QuickFixCmdPost    l* nested lwindow
+augroup END
 
 " Easyclip
 let g:EasyClipUseSubstituteDefaults = 1
@@ -156,7 +173,14 @@ let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
-
+" if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
+augroup GroupSyntastic
+  autocmd!
+  autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
+      \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
+      \ ['eslint'] : ['standard']
+augroup END
+" see https://github.com/feross/eslint-config-standard to extend feross/standard
 let g:syntastic_html_tidy_ignore_errors = [
       \ "proprietary attribute" ,"trimming empty", "unescaped &" , "is not recognized!",
       \ "discarding unexpected", "inserting implicit", "missing", "lacks",
@@ -170,7 +194,10 @@ endif
 set complete=.,b,u,]
 set wildmode=longest,list,full
 set completeopt=menu,preview
-
+augroup GroupCompleteDone
+  autocmd!
+  autocmd CompleteDone * pclose
+augroup END
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
@@ -415,12 +442,6 @@ augroup JavaScript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
-  " if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
-  autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
-      \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
-      \ ['eslint'] : ['standard']
-  " HACK: Rainbow doesn't work well with JavaScript
-  autocmd FileType javascript syntax clear jsFuncBlock
 augroup END
 
 augroup TypeScript
@@ -449,25 +470,6 @@ augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
   autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
-augroup END
-
-" change matchparen colors to match cursorline on insert mode
-augroup MatchingParen
-  autocmd!
-  autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
-augroup END
-
-augroup QuickFixCommand
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* nested cwindow
-  autocmd QuickFixCmdPost    l* nested lwindow
-augroup END
-
-
-augroup CursorMoved
-  autocmd!
-  autocmd CompleteDone * pclose
 augroup END
 
 
@@ -644,8 +646,6 @@ nnoremap { {zz
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
-" close html tag
-inoremap ,/ </<c-x><c-o>
 " 2 commas become a dot
 inoremap ,, .
 " kk mapping for hard to reach keyboard keys
@@ -670,11 +670,16 @@ inoremap kkj <esc>kJxi
 " select last entered word
 inoremap kkv <esc>viw
 
-
 " ----------------------- Bugfix / Workaround ----------------------- "
 
 " CtrlP not finding files in some projects/directories
 set shell=/bin/bash
+
+" Rainbow doesn't work well with JavaScript
+augroup GroupJSFuncBlock
+  autocmd!
+  autocmd FileType javascript syntax clear jsFuncBlock
+augroup END
 
 
 " ------------------------------ Notes ------------------------------ "
