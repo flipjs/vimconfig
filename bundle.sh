@@ -3,14 +3,13 @@
 #Ensure you have vim pathogen setup and the line below in your .vimrc
 #call pathogen#infect('bundle/{}', '~/.vimfiles/vimbundle/{}')
 #
-#Note: tern for vim is slow, you may not want to install it
-#
 #Post Install: additional steps to do inside the plugin
 #* YouCompleteMe
 #  - git submodule update --init --recursive
-#  - ./install.py
+#  - ./install.py --clang-completer --tern-completer
 #* tern_for_vim
 #  - npm install
+#  - (ensure you have .tern-project in project dir or home dir)
 #* vimproc.vim
 #  - make
 
@@ -30,7 +29,7 @@ git clone https://github.com/othree/javascript-libraries-syntax.vim.git
 git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/crusoexia/vim-javascript-lib.git
 git clone https://github.com/scrooloose/syntastic.git
-git clone https://github.com/marijnh/tern_for_vim.git
+git clone https://github.com/ternjs/tern_for_vim.git
 git clone https://github.com/Valloric/YouCompleteMe.git
 git clone https://github.com/SirVer/ultisnips.git
 git clone https://github.com/ervandew/supertab.git
