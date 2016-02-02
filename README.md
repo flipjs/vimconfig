@@ -26,3 +26,6 @@ sudo ./configure \
 sudo make
 sudo make install
 
+link:
+https://kowalcj0.wordpress.com/2013/11/19/how-to-compile-and-install-latest-version-of-vim-with-support-for-x11-clipboard-ruby-python-2-3/
+
