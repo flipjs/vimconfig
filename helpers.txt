@@ -14,6 +14,14 @@ Install the following helpers GLOBALLY (google search on how-to):
       apt-get update
       apt-get install silversearcher-ag
 
+* CTAGS
+    OSX:
+      brew install ctags-exuberant
+    Linux:
+      apt-get install exuberant-ctags
+
+* JSCTAGS
+    npm install -g git+https://github.com/ramitos/jsctags.git
 
 NPM Packages: (npm install -g)
 
