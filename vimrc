@@ -597,6 +597,9 @@ inoremap jj <esc>
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+" share data between concurrent vim instances
+vnoremap <leader>yy :w! /tmp/vimshare<cr>
+nnoremap <leader>pp :r! cat /tmp/vimshare<cr>
 " highlight last inserted text
 nnoremap gV `[v`]
 " stay on visual mode when indenting
