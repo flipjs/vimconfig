@@ -111,12 +111,8 @@ nnoremap ,, ,
 
 " ------------------------- Plugin Settings ------------------------- "
 
-" Skipit
-imap <c-f>l <Plug>SkipItForward
-imap <c-f>L <Plug>SkipAllForward
-imap <c-f>h <Plug>SkipItBack
-imap <c-f>H <Plug>SkipAllBack
-nmap <c-f> i<c-f><c-f>
+" Mustache-Handlebars
+let g:mustache_abbreviations = 1
 
 " Buftabline
 let g:buftabline_show = 1
@@ -438,7 +434,7 @@ endfunction
 
 augroup JavaScript
   autocmd!
-  autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+  autocmd BufNewFile,BufRead *.es6 set filetype=javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
@@ -470,6 +466,11 @@ augroup Elixir
   autocmd!
   autocmd FileType elixir nnoremap <buffer> <leader>rr :!clear && elixir %<cr>
   autocmd FileType elixir nnoremap <buffer> <leader>re :!clear && mix test<cr>
+augroup END
+
+augroup Handlebars
+  autocmd!
+  autocmd BufNewFile,BufRead *.hbs set filetype=html
 augroup END
 
 
@@ -507,6 +508,13 @@ end
 
 
 " -------------------- Plugin-dependent Mapping --------------------- "
+
+" Skipit
+imap <c-f>l <Plug>SkipItForward
+imap <c-f>L <Plug>SkipAllForward
+imap <c-f>h <Plug>SkipItBack
+imap <c-f>H <Plug>SkipAllBack
+nmap <c-f> i<c-f><c-f>
 
 " Visual-star-search
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' . shellescape(expand("<cword>")))<cr>
