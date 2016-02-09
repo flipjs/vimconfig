@@ -91,6 +91,10 @@ augroup GroupMatchParen
   autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
 augroup END
 
+" get rid of ugly split borders
+highlight vertsplit ctermfg=black ctermbg=black
+highlight vertsplit guifg=black guibg=black
+
 " folds
 set viewdir=~/.vimfiles/vimviews
 " Note: javascript folds defined in ftplugin directory
@@ -117,12 +121,6 @@ let g:mustache_abbreviations = 1
 " Buftabline
 let g:buftabline_show = 1
 let g:buftabline_indicators = 1
-
-" Gitgutter
-" tell gitgutter to allow overriding gutter color
-let g:gitgutter_override_sign_column_highlight = 0
-" override gutter color
-highlight SignColumn ctermfg=118
 
 " Typescript
 let g:typescript_indent_disable = 1
