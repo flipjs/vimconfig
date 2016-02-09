@@ -646,6 +646,8 @@ nnoremap <leader>ss :vertical resize 120<cr>
 nnoremap <leader>se <c-w>=
 nnoremap <leader>sf <c-w>\|
 nnoremap <leader>sd :bp\|bd #<cr>
+" site-wide search and replace
+nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
