@@ -71,3 +71,4 @@ git clone https://github.com/terryma/vim-multiple-cursors.git
 git clone https://github.com/cakebaker/scss-syntax.vim.git
 git clone https://github.com/habamax/vim-skipit.git
 git clone git://github.com/mustache/vim-mustache-handlebars.git
+git clone https://github.com/skwp/greplace.vim.git
