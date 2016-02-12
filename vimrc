@@ -728,5 +728,16 @@ augroup END
 " \:call repeat#set("\<Plug>TransposeLines")<cr>
 " nmap cp <Plug>TransposeLines
 
+" To do a rectangle selection of text from (1,1) to (2,2) in tmux:
+" Go to the copy mode: C-a [
+" Move the middle of a line
+" Press C-v
+" Press Space
+" Move the selection with jkhl
+" Once you are happy with your selection press Enter (or y if you have the binding in your conf file).
+" You can paste the latest copy buffer by: C-a ]
+" Notice that pressing space is necessary for rectangle selection.
+" To select lines like you would normally do, go the copy mode, and press v, select with jkhl keys and press y.
+
 
 " ------------------------------- END ------------------------------- "
