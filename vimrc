@@ -156,6 +156,8 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = 'ag %s -l -U --nocolor -g ""'
 let g:ctrlp_match_window = 'min:4,max:28' "results imposed by max height
 let g:ctrlp_match_window_reversed = 0
+" search by filename - can be toggled on/off by pressing <c-d> inside the prompt
+let g:ctrlp_by_filename = 1
 
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
