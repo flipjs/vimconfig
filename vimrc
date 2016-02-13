@@ -95,14 +95,13 @@ augroup END
 highlight vertsplit ctermfg=black ctermbg=black
 highlight vertsplit guifg=black guibg=black
 
-" folds
-set viewdir=~/.vimfiles/vimviews
-" Note: javascript folds defined in ftplugin directory
-augroup GroupBufWin
-  autocmd!
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* silent loadview
-augroup END
+" folds - disable for now as I dont use it
+" set viewdir=~/.vimfiles/vimviews
+" augroup GroupBufWin
+"   autocmd!
+"   autocmd BufWinLeave *.* mkview
+"   autocmd BufWinEnter *.* silent loadview
+" augroup END
 
 
 " --------------------------- Map Leader ---------------------------- "
