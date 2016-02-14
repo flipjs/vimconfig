@@ -345,7 +345,7 @@ endfunction
 
 augroup AutoSyntastic
   autocmd!
-  autocmd BufWritePost *.js,*.ts,*.php call s:syntastic()
+  autocmd BufWritePost *.js,*.jsx,*.ts,*.php,*.py,*.rb call s:syntastic()
 augroup END
 
 function! s:syntastic()
