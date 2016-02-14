@@ -468,6 +468,11 @@ augroup PHP
   autocmd FileType php nnoremap <buffer> <leader>rr :!clear && php %<cr>
 augroup END
 
+augroup Ruby
+  autocmd!
+  autocmd FileType ruby nnoremap <buffer> <leader>rr :!clear && ruby %<cr>
+augroup END
+
 augroup Python
   autocmd!
   autocmd FileType python nnoremap <buffer> <leader>rr :!clear && python3 %<cr>
