@@ -699,6 +699,8 @@ inoremap kkA <esc>A
 inoremap kkj <esc>kJxi
 " select last entered word
 inoremap kkv <esc>viw
+" <enter> inserts empty line below the cursor
+nnoremap <cr> o
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
