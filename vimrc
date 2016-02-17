@@ -593,6 +593,7 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 " edit and source .vimrc
 nnoremap <leader>ve :edit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
+nnoremap <leader>vu :source $HOME/.vim/unmap.vim<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
@@ -701,6 +702,8 @@ inoremap kkj <esc>kJxi
 inoremap kkv <esc>viw
 " <enter> inserts empty line below the cursor
 nnoremap <cr> o
+" <c-d> to repeat last command
+nmap <c-d> .
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
