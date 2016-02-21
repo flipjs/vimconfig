@@ -52,15 +52,21 @@ function ${1:function_name} ($2) {
 }
 endsnippet
 
+snippet xfn "arrow function"
+${1:export }const ${2:function_name} = (${3}) => {
+	${VISUAL}${0}
+}
+endsnippet
+
 snippet afn "arrow function"
-const ${1:function_name} = ($2) => {
-	${VISUAL}$0
+const ${1:function_name} = (${2}) => {
+	${VISUAL}${0}
 }
 endsnippet
 
 snippet aafn "anonymous arrow function"
-($1) => {
-	${VISUAL}$0
+(${1}) => {
+	${VISUAL}${0}
 }
 endsnippet
 
