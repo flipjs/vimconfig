@@ -690,11 +690,11 @@ inoremap kkw ""<esc>i
 inoremap kkd <cr><esc>O
 inoremap kkh <esc>i
 inoremap kkl <esc>la
+inoremap kkn <esc>A;
 inoremap kkm <esc>A:
 inoremap kk, <esc>A,
 " note: have side effect for word booKKEeping, see word abbrev
 inoremap kke =
-inoremap kkn :
 inoremap kko ;
 inoremap kkA <esc>A
 " join 2 lines on insert mode when cursor is on second line
