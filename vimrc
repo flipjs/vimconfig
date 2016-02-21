@@ -594,6 +594,8 @@ nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
 nnoremap <leader>ve :edit $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 nnoremap <leader>vu :source $HOME/.vim/unmap.vim<cr>
+nnoremap <leader>vj :edit $HOME/.vim/UltiSnips/javascript/javascript.snippets<cr>
+nnoremap <leader>vp :edit $HOME/.vim/UltiSnips/php.snippets<cr>
 " ctrl-s to save
 noremap <c-s> :update<cr><esc>
 vnoremap <c-s> <esc>:update<cr><esc>
@@ -674,6 +676,13 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
+" add semicolon at end of line
+nnoremap <c-c> m`A;<esc>``
+inoremap <c-c> <esc>m`A;<esc>``
+" <enter> inserts empty line below the cursor
+nnoremap <cr> o
+" <c-d> to repeat last command
+nmap <c-d> .
 " insert empty line between brackets on <enter>
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
@@ -694,17 +703,14 @@ inoremap kkn <esc>A;
 inoremap kkm <esc>A:
 inoremap kk, <esc>A,
 " note: have side effect for word booKKEeping, see word abbrev
-inoremap kke =
+inoremap kku _
 inoremap kko ;
+inoremap kke =
 inoremap kkA <esc>A
 " join 2 lines on insert mode when cursor is on second line
 inoremap kkj <esc>kJxi
 " select last entered word
 inoremap kkv <esc>viw
-" <enter> inserts empty line below the cursor
-nnoremap <cr> o
-" <c-d> to repeat last command
-nmap <c-d> .
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
