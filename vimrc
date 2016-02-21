@@ -643,9 +643,10 @@ nnoremap <leader>aa ggVG
 " match ErrorMsg '\%>96v.\+'
 nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
 nnoremap <leader>ln :match none<cr>
-" syntactic error window
+" syntastic error window
 nnoremap <leader>ll :Errors<cr>
 nnoremap <leader>lo :SyntasticToggleMode<cr>
+nnoremap <leader>lv :let b:syntastic_checkers?<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprev<cr>
