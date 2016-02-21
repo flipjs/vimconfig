@@ -1,0 +1,195 @@
+snippet p>
+<?php
+
+${VISUAL}$0
+endsnippet
+
+snippet p>>
+<?php
+
+${VISUAL}$0
+?>
+endsnippet
+
+snippet ec
+echo ${1};
+endsnippet
+
+snippet pf
+printf(${1});
+endsnippet
+
+snippet ?
+<?php ${1} ?>
+endsnippet
+
+snippet ns
+namespace ${1:Foo\Bar\Baz};
+${VISUAL}$0
+endsnippet
+
+snippet use
+use ${1:Foo\Bar\Baz};
+${VISUAL}$0
+endsnippet
+
+snippet	c
+class ${1:ClassName}
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet i
+interface ${1:name}
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet th
+$this->
+endsnippet
+
+snippet ff
+function ${1}(${2})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fp
+public function ${1:fname}(${2})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fo
+protected function ${1:fname}(${2})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fi
+private function ${1:fname}(${2})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet fc
+public function __construct(${1})
+{
+	${VISUAL}$0
+}
+endsnippet
+
+snippet pro
+protected $${1:variable};
+endsnippet
+
+snippet pub
+public $${1:variable};
+endsnippet
+
+snippet pri
+private $${1:variable};
+endsnippet
+
+snippet vd
+var_dump($${1});
+endsnippet
+
+snippet vdd
+var_dump($${1}); die($${2});
+endsnippet
+
+snippet pr
+print_r(${1});
+endsnippet
+
+snippet def
+define('${1}'${2});
+endsnippet
+
+snippet wh
+while (${1:condition}) {
+${VISUAL}$0
+}
+endsnippet
+
+snippet do
+do {
+	${VISUAL}$0
+} while (${1:condition});
+endsnippet
+
+snippet if
+if (${1:condition}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet ifn
+if (!${1:condition}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet ife
+if (${1:condition}) {
+	${2}
+} else {
+	${3}
+}
+endsnippet
+
+snippet el
+else {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet eif
+elseif (${1:condition}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet switch
+switch ($${1:variable}) {
+case '${2:value}':
+	${3}
+	break;
+default:
+	${4}
+	break;
+}
+endsnippet
+
+snippet case
+case '${1:value}':
+	${2}
+	break;
+endsnippet
+
+snippet for
+for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet foreach
+foreach ($${1:variable} as $${2:value}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet foreachk
+foreach ($${1:variable} as $${2:key} => $${3:value}) {
+	${VISUAL}$0
+}
+endsnippet
+
