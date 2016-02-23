@@ -763,5 +763,6 @@ augroup END
 " Notice that pressing space is necessary for rectangle selection.
 " To select lines like you would normally do, go the copy mode, and press v, select with jkhl keys and press y.
 
+" CTRLP - to rescan files, press F5 while in ctrl-p mode
 
 " ------------------------------- END ------------------------------- "
