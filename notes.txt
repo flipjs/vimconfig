@@ -1,0 +1,5 @@
+in case you want to compile vim from source, this configuration seems fine, which enables clipboard, python and ruby support, conceal, etc):
+
+./configure --enable-pythoninterp --enable-rubyinterp --with-python-config-dir=/PYTHON_DEVEL_DIRECTORY_HERE
+make
+make install
