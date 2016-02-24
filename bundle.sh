@@ -73,3 +73,4 @@ git clone https://github.com/habamax/vim-skipit.git
 git clone git://github.com/mustache/vim-mustache-handlebars.git
 git clone https://github.com/skwp/greplace.vim.git
 git clone https://github.com/vim-ruby/vim-ruby.git
+git clone https://github.com/StanAngeloff/php.vim.git
