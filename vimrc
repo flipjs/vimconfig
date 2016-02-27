@@ -679,8 +679,6 @@ nnoremap { {zz
 " add semicolon at end of line
 nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
-" <enter> inserts empty line below the cursor
-nnoremap <cr> o
 " <c-d> to repeat last command
 nmap <c-d> .
 " insert empty line between brackets on <enter>
