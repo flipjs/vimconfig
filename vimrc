@@ -192,7 +192,7 @@ if !exists("g:ycm_semantic_triggers")
 endif
 set complete=.,b,u,]
 set wildmode=longest,list,full
-set completeopt=menu,preview
+set completeopt=menu
 augroup GroupCompleteDone
   autocmd!
   autocmd CompleteDone * pclose
