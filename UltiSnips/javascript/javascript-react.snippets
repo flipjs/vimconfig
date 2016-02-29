@@ -10,13 +10,18 @@ import React, { PropTypes } from 'react'
 ${VISUAL}$0
 endsnippet
 
-snippet impd "import ReactDOM"
-import ReactDOM from 'react-dom'
+snippet imprc "import React, { Component }"
+import React, { Component } from 'react'
 ${VISUAL}$0
 endsnippet
 
-snippet impred "import Redux"
-import Redux from 'redux'
+snippet imprcp "import React, { Component, PropTypes }"
+import React, { Component, PropTypes } from 'react'
+${VISUAL}$0
+endsnippet
+
+snippet impd "import ReactDOM"
+import ReactDOM from 'react-dom'
 ${VISUAL}$0
 endsnippet
 
@@ -31,7 +36,7 @@ ${VISUAL}$0
 endsnippet
 
 snippet rr "ReactDOM Render"
-ReactDOM.render(<${1:MyComponent} />, document.getElementById('${2:myComponentId}'))
+ReactDOM.render(<${1:MyComponent} />, document.getElementById('${2:elementId}'))
 endsnippet
 
 snippet rc "React Component Class"

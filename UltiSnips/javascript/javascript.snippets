@@ -83,20 +83,37 @@ constructor (${1}) {
 }
 endsnippet
 
-snippet imp "import"
-import ${1:variable} from '${2:module}'
+snippet impd "import defaultMember from module"
+import ${1:defaultMember} from '${2:module}'
 ${VISUAL}$0
 endsnippet
 
-snippet impb "import"
-import { ${1:variable} } from '${2:module}'
+snippet impm "import { member } from module"
+import { ${1:member} } from '${2:module}'
 ${VISUAL}$0
 endsnippet
 
-snippet impm "import"
+snippet impma "import { member as alias } from module"
+import { ${1:member} as ${2:alias} } from '${3:module}'
+${VISUAL}$0
+endsnippet
+
+snippet impms "import { members... } from module"
 import {
-	${1:variable}
+	${1:member1...}
 } from '${2:module}'
 ${VISUAL}$0
+endsnippet
+
+snippet exp "export"
+export ${VISUAL}$0
+endsnippet
+
+snippet exd "export default"
+export default ${VISUAL}$0
+endsnippet
+
+snippet exc "export const"
+export const ${VISUAL}$0
 endsnippet
 
