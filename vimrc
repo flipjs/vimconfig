@@ -64,12 +64,12 @@ set wrap
 set linebreak
 set breakindent
 set showbreak=»\
-set textwidth=96
+set textwidth=79
 set formatoptions=qrn1
 set nolist
 set listchars=tab:▸\ ,eol:¬
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=120
+set synmaxcol=79
 
 set splitbelow
 set splitright
@@ -647,14 +647,16 @@ nnoremap <leader>di :v/<c-r><c-w>/d<cr>gg
 nnoremap <leader>dy :v/<c-r>"/d<cr>gg
 " select all text
 nnoremap <leader>aa ggVG
-" visual warning when text past 96 column
-" match ErrorMsg '\%>96v.\+'
-nnoremap <leader>le :match ErrorMsg '\%>96v.\+'<cr>
+" visual warning when text past 79 column
+match ErrorMsg '\%>79v.\+'
+nnoremap <leader>le :match ErrorMsg '\%>79v.\+'<cr>
 nnoremap <leader>ln :match none<cr>
-" syntastic error window
-nnoremap <leader>ll :Errors<cr>
-nnoremap <leader>lo :SyntasticToggleMode<cr>
-nnoremap <leader>lv :let b:syntastic_checkers?<cr>
+" show error window - syntastic
+nnoremap <leader>lo :Errors<cr>
+" close error window
+nnoremap <leader>lc :lclose<cr>
+nnoremap <leader>lt :SyntasticToggleMode<cr>
+nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
 nnoremap <silent> <leader>bp :bprev<cr>
