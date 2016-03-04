@@ -513,11 +513,6 @@ inoreabbrev BKPING BOOKKEEPING
 
 " ------------------------- for iTerm only -------------------------- "
 
-" default cursor shape
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
-
 " if iTerm detected, change default
 if exists('$ITERM_PROFILE')
   if exists('$TMUX')
