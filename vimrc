@@ -686,9 +686,9 @@ inoremap <c-c> <esc>m`A;<esc>``
 " <c-d> to repeat last command
 nmap <c-d> .
 " insert empty line between brackets on <enter>
-inoremap {<cr> {<cr>}<c-o>O
-inoremap [<cr> [<cr>]<c-o>O
-inoremap (<cr> (<cr>)<c-o>O
+" inoremap {<cr> {<cr>}<c-o>O
+" inoremap [<cr> [<cr>]<c-o>O
+" inoremap (<cr> (<cr>)<c-o>O
 " 2 commas become a dot
 inoremap ,, .
 " kk mapping for hard to reach keyboard keys
@@ -724,6 +724,13 @@ augroup GroupJSFuncBlock
   autocmd!
   autocmd FileType javascript syntax clear jsFuncBlock
 augroup END
+
+
+" ----------------------------- Macros ------------------------------ "
+
+" surround word with a single space inside a bracket
+" this macro depends on easyclip and autopairs plugins
+let @s="miwi p"
 
 
 " ------------------------------ Notes ------------------------------ "
