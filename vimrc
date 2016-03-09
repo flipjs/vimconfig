@@ -670,6 +670,7 @@ nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
+nnoremap <leader>ftx :set ft=jsx<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
