@@ -607,16 +607,13 @@ nnoremap <leader>dd :bd<cr>
 nnoremap <leader>ww :w<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
-" quit without saving
-nnoremap <leader>QQ :q!<cr>
-" remap % ^ $
-nnoremap Q %
+" apply macros with Q
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+" remap ^ $
 nnoremap H ^
 nnoremap L $
 vnoremap L g_
-" remove original mapping for ^ and $
-nnoremap ^ <nop>
-nnoremap $ <nop>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
