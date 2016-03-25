@@ -167,6 +167,7 @@ let g:formatdef_standard_js = '"standard-format --stdin"'
 let g:formatters_javascript = ['standard_js']
 
 " Syntastic
+let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
@@ -343,12 +344,19 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
   return lightline#statusline(0)
 endfunction
 
-augroup AutoSyntastic
-  autocmd!
-  autocmd BufWritePost *.js,*.jsx,*.ts,*.php,*.py,*.rb call s:syntastic()
-augroup END
+" disable auto check for now
+" augroup AutoSyntastic
+"   autocmd!
+"   autocmd BufWritePost *.js,*.jsx,*.ts,*.php,*.py,*.rb call s:syntastic()
+" augroup END
 
-function! s:syntastic()
+" function! s:syntastic()
+"   SyntasticCheck
+"   call lightline#update()
+" endfunction
+
+" JUST DO MANUAL CHECKING and nmap this function
+function! SyntaxCheck()
   SyntasticCheck
   call lightline#update()
 endfunction
@@ -605,6 +613,8 @@ inoremap <c-s> <esc>:update<cr><esc>
 nnoremap <leader>dd :bd<cr>
 " save current buffer
 nnoremap <leader>ww :w<cr>
+" save current buffer and syntax-check at the same time
+nnoremap <leader>ws :w <bar> call SyntaxCheck()<cr>
 " close saved buffer(s)
 nnoremap <leader>qq :q<cr>
 " apply macros with Q
@@ -647,6 +657,7 @@ nnoremap <leader>ln :match none<cr>
 nnoremap <leader>lo :Errors<cr>
 " close error window
 nnoremap <leader>lc :lclose<cr>
+nnoremap <leader>ls :call SyntaxCheck()<cr>
 nnoremap <leader>lt :SyntasticToggleMode<cr>
 nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
