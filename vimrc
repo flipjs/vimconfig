@@ -64,7 +64,7 @@ set wrap
 set linebreak
 set breakindent
 set showbreak=»\
-set textwidth=79
+" set textwidth=79
 set formatoptions=qrn1
 set nolist
 set listchars=tab:▸\ ,eol:¬
