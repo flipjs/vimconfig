@@ -510,13 +510,6 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 inoreabbrev funciton function
 inoreabbrev functon function
-" kke is being used as a map to equal sign, use abbrev below for affected words
-inoreabbrev bkp bookkeep
-inoreabbrev Bkp Bookkeep
-inoreabbrev BKP BOOKKEEP
-inoreabbrev bkping bookkeeping
-inoreabbrev Bkping Bookkeeping
-inoreabbrev BKPING BOOKKEEPING
 
 
 " ------------------------- for iTerm only -------------------------- "
@@ -697,30 +690,28 @@ nmap <c-d> .
 " inoremap {<cr> {<cr>}<c-o>O
 " inoremap [<cr> [<cr>]<c-o>O
 " inoremap (<cr> (<cr>)<c-o>O
-" 2 commas become a dot
-inoremap ,, .
-" kk mapping for hard to reach keyboard keys
-inoremap kkp ()<esc>i
-inoremap kkc {}<esc>i
-inoremap kks []<esc>i
-inoremap kka <><esc>i
-inoremap kkq ''<esc>i
-inoremap kkw ""<esc>i
-inoremap kkd <cr><esc>O
-inoremap kkh <esc>i
-inoremap kkl <esc>la
-inoremap kkn <esc>A;
-inoremap kkm <esc>A:
-inoremap kk, <esc>A,
-" note: have side effect for word booKKEeping, see word abbrev
-inoremap kku _
-inoremap kko ;
-inoremap kke =
-inoremap kkA <esc>A
+" ,, mapping for hard to reach keyboard keys
+inoremap ,,p ()<esc>i
+inoremap ,,c {}<esc>i
+inoremap ,,s []<esc>i
+inoremap ,,a <><esc>i
+inoremap ,,q ''<esc>i
+inoremap ,,w ""<esc>i
+inoremap ,,d <cr><esc>O
+inoremap ,,h <esc>i
+inoremap ,,l <esc>la
+inoremap ,,n <esc>A;
+inoremap ,,m <esc>A:
+inoremap ,,, <esc>A,
+" note: have side effect for word boo,,Eeping, see word abbrev
+inoremap ,,u _
+inoremap ,,o ;
+inoremap ,,e =
+inoremap ,,A <esc>A
 " join 2 lines on insert mode when cursor is on second line
-inoremap kkj <esc>kJxi
+inoremap ,,j <esc>kJxi
 " select last entered word
-inoremap kkv <esc>viw
+inoremap ,,v <esc>viw
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 

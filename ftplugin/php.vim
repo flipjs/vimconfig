@@ -1,7 +1,7 @@
 " Abbreviations
-inoremap <buffer> kkf =>
-inoremap <buffer> kkt ->
-inoremap <buffer> kki {$}<esc>i
+inoremap <buffer> ,,f =>
+inoremap <buffer> ,,t ->
+inoremap <buffer> ,,i {$}<esc>i
 
 inoremap <buffer> ,th $this->
 inoremap <buffer> ,ss \
