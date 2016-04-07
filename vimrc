@@ -83,12 +83,12 @@ set noswapfile
 
 " change cursorline and matchparen colors (cterm only)
 highlight CursorLine ctermbg=233
-highlight MatchParen cterm=none ctermbg=201 ctermfg=black
+highlight MatchParen cterm=none ctermbg=201 ctermfg=yellow
 " change matchparen colors to match cursorline on insert mode
 augroup GroupMatchParen
   autocmd!
   autocmd InsertEnter * highlight MatchParen ctermbg=233 ctermfg=15
-  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=black
+  autocmd InsertLeave * highlight MatchParen ctermbg=201 ctermfg=yellow
 augroup END
 
 " get rid of ugly split borders
