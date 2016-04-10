@@ -108,6 +108,8 @@ highlight vertsplit guifg=black guibg=black
 
 " mapleader is comma
 let mapleader = ","
+" set mapleader to spacebar too
+nmap <space> ,
 " get comma functionality back using ,,
 nnoremap ,, ,
 
