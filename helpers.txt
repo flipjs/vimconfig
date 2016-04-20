@@ -49,7 +49,8 @@ NPM Packages: (npm install -g)
 * typescript
 * jq-cli-wrapper
 * json-server
+* commitizen
 
 COPY PASTE THIS:
-npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-plugin-flow-vars eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-promise eslint-plugin-react babel-eslint babel-cli node-gyp http-server typescript jq-cli-wrapper json-server
+npm install -g bower gulp grunt-cli webpack webpack-dev-server js-beautify jshint jscs standard standard-format eslint eslint-plugin-flow-vars eslint-config-standard-react eslint-plugin-standard eslint-config-standard eslint-plugin-promise eslint-plugin-react babel-eslint babel-cli node-gyp http-server typescript jq-cli-wrapper json-server commitizen
 
