@@ -691,6 +691,10 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap } }zz
 nnoremap { {zz
+" enclose line in reactjs-style comment tag
+nnoremap <leader>cc ^i{/* <esc>A */}<esc>
+" remove reactjs-style comment tag
+nnoremap <leader>cd ^4x$3Xx
 " add semicolon at end of line
 nnoremap <c-c> m`A;<esc>``
 inoremap <c-c> <esc>m`A;<esc>``
