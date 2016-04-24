@@ -73,3 +73,5 @@ git clone https://github.com/skwp/greplace.vim.git
 git clone https://github.com/vim-ruby/vim-ruby.git
 git clone https://github.com/tomtom/tcomment_vim.git
 git clone https://github.com/jiangmiao/auto-pairs.git
+git clone https://github.com/heavenshell/vim-jsdoc.git
+
