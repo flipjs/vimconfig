@@ -465,6 +465,7 @@ augroup JavaScript
   autocmd BufNewFile,BufRead *.es6 set filetype=javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
+  autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rl :!clear && jshint %<cr>
 augroup END
 
