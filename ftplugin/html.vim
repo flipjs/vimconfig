@@ -49,3 +49,4 @@ inoreabbrev <buffer> ngswitch data-ng-switch
 inoreabbrev <buffer> ngtransclude data-ng-transclude
 inoreabbrev <buffer> ngvalue data-ng-value
 inoreabbrev <buffer> ngwhen data-ng-when
+
