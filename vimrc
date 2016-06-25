@@ -193,6 +193,8 @@ augroup GroupSyntastic
   autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
       \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
       \ ['eslint'] : ['standard']
+  autocmd FileType elixir let b:syntastic_enable_elixir_checker = 1
+  autocmd FileType elixir let b:syntastic_checkers = ['elixir']
 augroup END
 " see https://github.com/feross/eslint-config-standard to extend feross/standard
 let g:syntastic_html_tidy_ignore_errors = [
