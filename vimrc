@@ -181,6 +181,7 @@ let g:formatdef_standard_js = '"standard-format --stdin"'
 let g:formatters_javascript = ['standard_js']
 
 " Syntastic
+let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol = 'X'
@@ -193,7 +194,6 @@ augroup GroupSyntastic
   autocmd FileType javascript let b:syntastic_checkers = findfile('.jshintrc', '.;') != '' ?
       \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
       \ ['eslint'] : ['standard']
-  autocmd FileType elixir let b:syntastic_enable_elixir_checker = 1
   autocmd FileType elixir let b:syntastic_checkers = ['elixir']
 augroup END
 " see https://github.com/feross/eslint-config-standard to extend feross/standard
