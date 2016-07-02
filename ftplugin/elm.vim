@@ -1,3 +1,3 @@
 " Abbreviations
-inoremap <buffer> ,,t ->
+inoremap <buffer> ,,t -><space>
 
