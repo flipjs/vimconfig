@@ -75,4 +75,5 @@ git clone https://github.com/tomtom/tcomment_vim.git
 git clone https://github.com/jiangmiao/auto-pairs.git
 git clone https://github.com/heavenshell/vim-jsdoc.git
 git clone https://github.com/wakatime/vim-wakatime.git
+git clone https://github.com/ElmCast/elm-vim.git
 
