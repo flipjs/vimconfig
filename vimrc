@@ -96,7 +96,7 @@ augroup collumnLimit
   autocmd!
   autocmd BufEnter,WinEnter,FileType javascript
         \ highlight CollumnLimit ctermbg=red guibg=red
-  let collumnLimit = 80 " change limit here
+  let collumnLimit = 120 " change limit here
   let pattern =
         \ '\%<' . (collumnLimit+1) . 'v.\%>' . collumnLimit . 'v'
   autocmd BufEnter,WinEnter,FileType javascript
