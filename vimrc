@@ -128,6 +128,9 @@ nnoremap ,, ,
 
 " ------------------------- Plugin Settings ------------------------- "
 
+" JSX
+let g:jsx_ext_required = 0
+
 " Elm
 let g:elm_format_autosave = 0
 let g:elm_setup_keybindings = 0
@@ -692,7 +695,7 @@ nnoremap <leader>sr :Gsearch<cr>
 " switch filetype
 nnoremap <leader>ftt :set ft?<cr>
 nnoremap <leader>ftj :set ft=javascript<cr>
-nnoremap <leader>ftx :set ft=jsx<cr>
+nnoremap <leader>ftx :set ft=javascript.jsx<cr>
 nnoremap <leader>fts :set ft=typescript<cr>
 nnoremap <leader>fth :set ft=html<cr>
 nnoremap <leader>ftc :set ft=css<cr>
