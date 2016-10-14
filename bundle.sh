@@ -12,6 +12,9 @@
 #  - (ensure you have .tern-project in project dir or home dir)
 #* vimproc.vim
 #  - make
+#
+# To update each one of them, run this
+# for d in ./*/ ; do (cd "$d" && git pull); done
 
 git clone https://github.com/tpope/vim-sensible.git
 git clone https://github.com/tpope/vim-unimpaired.git
