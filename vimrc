@@ -119,11 +119,11 @@ highlight vertsplit guifg=black guibg=black
 " --------------------------- Map Leader ---------------------------- "
 
 " mapleader is comma
-let mapleader = ","
+let mapleader = " "
 " set mapleader to spacebar too
-nmap <space> ,
+" nmap <space> ,
 " get comma functionality back using ,,
-nnoremap ,, ,
+" nnoremap ,, ,
 
 
 " ------------------------- Plugin Settings ------------------------- "
@@ -132,11 +132,10 @@ nnoremap ,, ,
 let g:jsx_ext_required = 0
 
 " Elm
-let g:elm_format_autosave = 0
+let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
 let g:elm_classic_highlighting = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:elm_make_show_warnings = 1
 let g:elm_syntastic_show_warnings = 1
 
 " Greplace
@@ -197,7 +196,7 @@ let g:syntastic_mode_map = {'mode': 'passive'}
 let g:syntastic_check_on_open = 0
 let g:syntastic_error_symbol = 'X'
 let g:syntastic_warning_symbol = '!'
-let g:syntastic_auto_loc_list = 2
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 " if theres jshintrc, use jshint. if theres eslintrc, use eslint. otherwise use standard
 augroup GroupSyntastic
@@ -206,6 +205,7 @@ augroup GroupSyntastic
       \ ['jshint', 'jscs'] : findfile('.eslintrc', '.;') != '' ?
       \ ['eslint'] : ['standard']
   autocmd FileType elixir let b:syntastic_checkers = ['elixir']
+  autocmd FileType elm let b:syntastic_checkers = ['elm_make']
 augroup END
 " see https://github.com/feross/eslint-config-standard to extend feross/standard
 let g:syntastic_html_tidy_ignore_errors = [
@@ -215,9 +215,6 @@ let g:syntastic_html_tidy_ignore_errors = [
       \ ]
 
 " YouCompleteMe
-if !exists("g:ycm_semantic_triggers")
-   let g:ycm_semantic_triggers = {}
-endif
 set complete=.,b,u,]
 set wildmode=longest,list,full
 set completeopt=menu
@@ -473,9 +470,14 @@ endfunction
 
 " -------------------------- Autocommands --------------------------- "
 
+augroup Elm
+  autocmd!
+  autocmd FileType elm nnoremap <buffer> <leader>rr :ElmMake<cr>
+  autocmd FileType elm nnoremap <buffer> <leader>re :ElmErrorDetail<cr>
+augroup END
+
 augroup JavaScript
   autocmd!
-  autocmd BufNewFile,BufRead *.es6 set filetype=javascript
   autocmd FileType javascript nnoremap <buffer> <leader>rr :!clear && node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rb :!clear && babel-node %<cr>
   autocmd FileType javascript nnoremap <buffer> <leader>rt :!clear && ava %<cr>
@@ -615,7 +617,7 @@ nnoremap <leader>hf mz:execute FileHeader()`zjA
 " line heading
 nnoremap <leader>hl :call LineHeader(67, '
 " delete empty buffers
-nnoremap <leader>ee :call DeleteEmptyBuffers()<cr>
+nnoremap <leader>de :call DeleteEmptyBuffers()<cr>
 
 
 " ------------------------- Custom Mapping -------------------------- "
@@ -674,8 +676,11 @@ nnoremap <leader>aa ggVG
 nnoremap <leader>lo :Errors<cr>
 " close error window
 nnoremap <leader>lc :lclose<cr>
+" run syntax checker
 nnoremap <leader>ls :call SyntaxCheck()<cr>
+" toggle gutter display
 nnoremap <leader>lt :SyntasticToggleMode<cr>
+" show current syntax checker
 nnoremap <leader>lv :echo b:syntastic_checkers<cr>
 " switch buffers
 nnoremap <silent> <leader>bn :bnext<cr>
@@ -721,28 +726,28 @@ nmap <c-d> .
 " inoremap {<cr> {<cr>}<c-o>O
 " inoremap [<cr> [<cr>]<c-o>O
 " inoremap (<cr> (<cr>)<c-o>O
-" ,, mapping for hard to reach keyboard keys
-inoremap ,,p ()<esc>i
-inoremap ,,c {}<esc>i
-inoremap ,,s []<esc>i
-inoremap ,,a <><esc>i
-inoremap ,,q ''<esc>i
-inoremap ,,w ""<esc>i
-inoremap ,,d <cr><esc>O
-inoremap ,,h <esc>i
-inoremap ,,l <esc>la
-inoremap ,,n <esc>A;
-inoremap ,,m <esc>A:
-inoremap ,,, <esc>A,
+" ,, mapping for not too easy to type characters
+" inoremap ,,p ()<esc>i
+" inoremap ,,c {}<esc>i
+" inoremap ,,s []<esc>i
+" inoremap ,,a <><esc>i
+" inoremap ,,q ''<esc>i
+" inoremap ,,w ""<esc>i
+" inoremap ,,d <cr><esc>O
+" inoremap ,,h <esc>i
+" inoremap ,,l <esc>la
+" inoremap ,,n <esc>A;
+" inoremap ,,m <esc>A:
+" inoremap ,,, <esc>A,
 " note: have side effect for word boo,,Eeping, see word abbrev
-inoremap ,,u _
-inoremap ,,o ;
-inoremap ,,e =
-inoremap ,,A <esc>A
+" inoremap ,,u _
+" inoremap ,,o ;
+" inoremap ,,e =
+" inoremap ,,A <esc>A
 " join 2 lines on insert mode when cursor is on second line
-inoremap ,,j <esc>kJxi
+" inoremap ,,j <esc>kJxi
 " select last entered word
-inoremap ,,v <esc>viw
+" inoremap ,,v <esc>viw
 
 " ----------------------- Bugfix / Workaround ----------------------- "
 
