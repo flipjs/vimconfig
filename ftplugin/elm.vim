@@ -6,4 +6,5 @@ inoremap <buffer> ,,F <=<space>
 inoremap <buffer> ,,p \|><space>
 inoremap <buffer> ,,P <\|<space>
 inoremap <buffer> ,,/ /=<space>
+inoremap <buffer> ,,; :=<space>
 
