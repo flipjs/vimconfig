@@ -137,6 +137,7 @@ let g:elm_setup_keybindings = 0
 let g:elm_classic_highlighting = 1
 let g:elm_make_show_warnings = 1
 let g:elm_syntastic_show_warnings = 1
+let g:elm_format_fail_silently = 0
 
 " Greplace
 set grepprg=ag
@@ -755,10 +756,10 @@ nmap <c-d> .
 set shell=/bin/bash
 
 " Rainbow doesn't work well with JavaScript
-augroup GroupJSFuncBlock
-  autocmd!
-  autocmd FileType javascript syntax clear jsFuncBlock
-augroup END
+" augroup GroupJSFuncBlock
+"   autocmd!
+"   autocmd FileType javascript syntax clear jsFuncBlock
+" augroup END
 
 
 " ----------------------------- Macros ------------------------------ "
