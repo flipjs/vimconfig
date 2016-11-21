@@ -66,8 +66,9 @@ set breakindent
 set showbreak=»\
 " set textwidth=79
 set formatoptions=qrn1
-set nolist
-set listchars=tab:▸\ ,eol:¬
+" set nolist
+" set listchars=tab:▸\ ,eol:¬
+set list lcs=trail:·,tab:▸·
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=120
 
