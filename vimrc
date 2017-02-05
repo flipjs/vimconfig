@@ -811,5 +811,10 @@ let @s="miwi p"
 
 " CTRLP - to rescan files, press F5 while in ctrl-p mode
 
+" When using without your .vimrc (e.g. using other PC), use this quick setup
+" set nocompatible
+" set ts=2 sw=2 sts=2 et
+" set backspace=indent,eol,start
+
 " ------------------------------- END ------------------------------- "
 
