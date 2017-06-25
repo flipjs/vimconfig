@@ -1,2 +1,5 @@
 init.vim
 view/
+tags
+tags.lock
+tags.temp
